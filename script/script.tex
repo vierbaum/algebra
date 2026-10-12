@@ -1,0 +1,165 @@
+\documentclass{article}
+\usepackage{a4wide}
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage{xcolor}
+\title{Algebra WS 2026}
+\author{Nick Daiber}
+
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{defi}[thm]{Definition}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\F}{\mathbb{F}}
+\begin{document}
+\maketitle
+\section{Ganze Zahlen und Plynome}
+\begin{itemize}
+    \item
+           $\N_0\subset\N\subset\Z:=\{\text{zanze Zahlen}\}$
+    \item
+        $\Z[x]:=\{\text{Polynome mit ganzzahligen Koeffizienten}\}$\\
+        $=\{a_0+a_1x+\hdots+a_nx^n|n\in\N_0,a_n\in\Z\}$
+    \item
+        $\Q[x]:=\{\text{Polynome mit rationalen Koeffizienten}\}$
+\end{itemize}
+Ein Polynom $f(x)$ definiert eine (polynomiale) Gleichung
+$f(x)=0$\\
+Gesucht: $\lambda$ mit $a_0+a_1\lambda+\hdots+a_n\lambda^n=0$\\
+\begin{itemize}
+    \item
+        \color{purple}
+        $2x+3=0$: Keine Lösung in $\Z$, Lösung in $\Q$
+        \color{black}
+    \item
+        \color{purple}
+        $x^2-2=0$: Keine Lösung in $\Q$, zwei Lösungen in $\R$
+        \color{black}
+    \item
+        \color{purple}
+        $x^2+2=0$: Keine Lösung in $\R$\\
+        In $F_2:=\Z_{2\Z}:=\{\overline{0},\overline{1}\}$:
+        Eine Lösung
+        \color{black}
+    \item
+        \color{purple}
+        $x^2+x+1=0$: Keine Lösung in $\F_2$\\
+        \color{black}
+\end{itemize}
+\begin{itemize}
+    \item
+        Gegeben $K[x],f(x)\in K[x]$: Ist $f(x)$ lösbar in $K$?
+        Ist $f(x)$ irgendwo Lösbar? Wenn ja, wo?
+    \item
+        Gibt es immer Lösungsformeln?
+\end{itemize}
+\begin{thm}[Descartes]
+    Sei $f(x)=x^n+a_{n-1}x^{n-1}+\hdots+a_1x+a_0$
+    mit $a_i\in\Z$\\
+    Sei $x_0\in\Q$ eine Lösung. Dann ist $x_0\in\Z$.\\
+    \color{blue}
+        Es kommt also nicht jedes $x_0\in\Q$ als Lösung vor.\\
+    \color{black}
+    Beweis: $a_n=1\overset{1.2} (s|1)\Rightarrow
+    s\in\{1,-1\}\Rightarrow x_0=\pm a_0\in\Z$
+\end{thm}
+\begin{thm}[Descantes]
+    Sei $f(x)=a_nx^n+a_{n-1}x^{n-1}+\hdots+a_1x+a_0\in\Z[x]$\\
+    und sei $x_0=\frac{r}{s}$ eine Lösung von $f(x)=0$.
+    Dann ist $r\in\Z$ ein Teiler von $a_0$ und $s\in\Z$
+    ist ein Teiler von $a_n$\\
+    Beweis: Sei $x_0=\frac{r}{s}$, $f(x_0)=0$
+    \begin{align*}
+        f(x_0)&=0\\
+        \Rightarrow
+        a_n\left(\frac{r}{s}\right)^n+\hdots+a_0&=0&|\cdot s^n\\
+        \Rightarrow
+        a_nr^n+a_{n-1}r^{n-1}s+\hdots+a_1rs^{n-1}+a_0s^n&=0\\
+        \Rightarrow
+        r(a_nr^{n-1}+\hdots+a_1s^{n-1})&=-a_0s^n
+    \end{align*}
+    $r,s$ sind Teilerfremd, aber
+    \begin{equation*}
+        (r|-a_0s^n)\Rightarrow r|a_0
+    \end{equation*}
+    $s$ ausklammern:
+    \begin{equation*}
+        (s|-a_nr^n)\Rightarrow s|a_n
+    \end{equation*}
+\end{thm}
+\color{blue}
+$\N$ ist festgelegt durch die Peano-Axiome:
+$1\in\N,\exists$ injektive (Nachfolger-) Funktion\\
+$\N\rightarrow\N,n\mapsto n'(=:n+1)$ jedes $m\in\N$ ist
+ein $n'$ mit Ausnahme $m=1$\\
+
+$\underset{X\text{(Menge)}}\forall 1\in X\land
+\underset{n\in\N}\forall n\in X\rightarrow n'\in X
+\Rightarrow \N\subset X$
+
+$X=\{\text{Zahlen für die Aussage $A$ Wahr}\}, A(1)=1\in X$
+(Induktionsanfang)\\
+$n\in X:A(n)$ wahr $\Rightarrow A(n')=A(n+1)$ wahr
+(Induktionsschritt), dann ist
+$\underset{m\in\N}\forall A(m)$ wahr
+\color{black}
+\begin{defi}
+    Ein \textbf{Ring} $R$ ist ein Quintupel $(R,+,\cdot,0,1)$
+    bestehend aus eine Menge $R$ mit zwei Abbildungen
+    \begin{itemize}
+        \item
+            Addition:
+               $+:R\times R\rightarrow R,(a,b)\mapsto a+b$
+        \item
+            Multiplikation:
+               $\cdot:R\times R\rightarrow R,(a,b)
+            \mapsto a\cdot b$
+    \end{itemize}
+    Es gilt
+    \begin{itemize}
+        \item
+            $+$ ist Assoziativiv:
+            $\underset{a,b,c\in R}\forall (a+b)+c=a+(b+c)$
+        \item
+            $+$ ist Kommutativ:
+            $\underset{a,b\in R}\forall a+b=b+a$
+        \item
+            $\cdot$ ist Assoziativiv:
+            $\underset{a,b,c\in R}\forall
+            (a\cdot b)\cdot c=a\cdot (b\cdot c)$
+    \end{itemize}
+    Weiter ist $0_R\neq 1_R$
+    \begin{itemize}
+        \item
+            Neutrales Element der Addition:
+            $\underset{a\in R}\forall a+0_R=a$
+        \item
+            Neutrales Element der Multiplikation:
+            $\underset{a\in R}\forall a\cdot 1_R=a=1_R\cdot a$
+    \end{itemize}
+    Es ist außerdem
+    \begin{itemize}
+        \item
+            Inverses der Addition: $\underset{a\in R}\forall
+            \underset{-a\in R}-a+a=0$
+    \end{itemize}
+    Es gilt
+    \begin{itemize}
+        \item
+            Distributivgesetz:
+            $\underset{a,b,c\in R}\forall
+            (a+b)\cdot c=a\cdot c+b\cdot c$
+    \end{itemize}
+    \color{blue}
+    $R$ ist ein \textbf{Kommutativer Ring}, wenn zusätzlich
+    $\underset{a,b\in R}\forall a\cdot b=b\cdot a$
+    \color{black}
+
+    Eine Teilmenge $S\subseteq R$ ist ein
+    \textbf{Teilring (Unterring)} von $R$, wenn $0_R,1_R\in S$
+    und unter den Operationen $+_R$ und $\cdot_R$
+    abgeschlossen ist. Dann gilt
+    $(S,+_R,\cdot_R,0_R,1_R)$ selber ein Ring.
+\end{defi}
+\end{document}
