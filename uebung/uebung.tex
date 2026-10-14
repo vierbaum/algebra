@@ -1,0 +1,108 @@
+\documentclass{article}
+\usepackage{a4wide}
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage{xcolor}
+\usepackage{enumerate}
+\input{title.tex}
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\tr}{\text{tr}}
+\newcommand{\Mat}{\text{Mat}}
+\newcommand{\ev}{\text{ev}}
+\begin{document}
+\maketitle
+\section{}
+\subsection{}
+\begin{enumerate}[(a)]
+    \item
+        \color{blue}
+            Sei $m\in\Z$ und $n\geq 2$ eine Natürliche Zahl.
+            Ist jede rationale Lösung von $x^n=m$ eine
+            Ganze Zahl?\\
+        \color{black}
+        Es gilt
+        $x^n=m\Leftrightarrow x^n-m=0$
+        es ist für jede Rationale Lösung
+        $x_i=\frac{r_i}{s_i}$ mit $r_i,s_i\in\Z$ Teilerfremd
+        nach Theorem 1.2
+        $s_i|1\Rightarrow s_i\in\{-1,1\}$
+        Also ist $\{x_i\}\subset\Z$.
+    \item
+        \color{blue}
+            Folgern Sie, dass $\sqrt{5}$ und $\sqrt[7]{3}$
+            irrational sind.\\
+        \color{black}
+        \begin{itemize}
+            \item
+                Wir nehmen an $\sqrt{5}\in\Q$.
+                Es gilt $x^2=5$ für $x=\sqrt{5}$.
+                Es gilt also nach $(a) \sqrt{5}\in\Z$.
+                Da dies Offensichtlich nicht gilt,
+                ist die Annahme, $\sqrt{5}\in\Q$, falsch
+                $\Rightarrow\sqrt{5}\notin\Q$
+            \item
+                Wir nehmen an $\sqrt[7]{3}\in\Q$.
+                Es gilt $x^7=3$ für $x=\sqrt[7]{3}$.
+                Es gilt also nach $(a) \sqrt[7]{3}\in\Z$.
+                Da dies Offensichtlich nicht gilt,
+                ist die Annahme, $\sqrt[7]{3}\in\Q$, falsch
+                $\Rightarrow\sqrt[7]{3}\notin\Q$
+        \end{itemize}
+    \item
+        \color{blue}
+        Bestimmtne Sie alle rationalen Nullstellen des
+        Polynoms $f(X)=X^{42}+3X^{27}-3X^2-1$\\
+        \color{black}
+        Nach 1.2 gilt
+        $\underset{x_i:=\frac{r_i}{s_i}:f(x_i)=0}\forall
+        r_i|-1\Rightarrow r_i\in\{-1,1\},
+        s_i|1\Rightarrow s_i\in\{-1,1\}$
+
+        Es ist aber
+        $f(-1)=-6,f(1)=0$
+        also ist $x_i=\{1\}$
+    \item
+        \color{blue}
+        Bestimmen Sie alle $m\in\Z$, für die $X^3-mX+1$ eine
+        rationale Nullstelle besitzt.\\
+        \color{black}
+        Wir schreiben $f^m(x)=x^3-mx+1$.
+
+        nach 1.2 gilt
+        \begin{equation*}
+            \underset{x_i^m:=\frac{r_i^m}{s_i^m}:f^m(x_i)=0}
+            \forall
+            r_i^m|1\Rightarrow r_i^m\in\{-1,1\},
+            s_i^m|1\Rightarrow s_i^m\in\{-1,1\}
+            \Rightarrow x_i^m\in\{-1,1\}
+        \end{equation*}
+        Es exisieren also nur die Rationalen
+        Nullstellen $-1, 1$
+        \begin{itemize}
+            \item
+                \begin{align*}
+                    f^m(-1)&\overset{!}=0\\
+                    (-1)^3-m(-1)+1&=0\\
+                    -1+m+1&=0\\
+                    m&=0
+                \end{align*}
+            \item
+                \begin{align*}
+                    f^m(1)&\overset{!}=0\\
+                    1^3-m\cdot 1+1&=0\\
+                    2&=m
+                \end{align*}
+        \end{itemize}
+        Es exisieren also rationale Nullstellen für
+        $f^{0}$ an der Stelle $-1$ und $f^2$ an der Stelle 1.
+
+        Weiter ist $f^0$ das einzige Polynom mit einer
+        Nullstelle für $x=-1$ und $f^2$ das einzige Polynom
+        mit einer Nullstelle für $x=1$.
+        Also ist $m\in\{0,2\}$
+\end{enumerate}
+\end{document}
