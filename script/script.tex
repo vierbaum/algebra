@@ -251,8 +251,7 @@ Division mit Rest.
         $R=K$ Körper, $a=\underbrace{\frac{a}{b}}_{ab^{-1}}
         \cdot b$ (also $q=ab^{-1},r=0,\lambda$ beliebig)
     \item
-        $R=\Z$ %TODO
-
+        $R=\Z$
         \begin{itemize}
             \item
                 Anschaulich:\\
@@ -283,6 +282,123 @@ Division mit Rest.
                         \geq a \Rightarrow (l+1) b>a$
                 \end{enumerate}
         \end{itemize}
+    \item
+        $K$ Körper, $K[x]$ Polynomring in einer Variablen
+        Sei $f(x):=a_nx^n+\hdots+a_0,a_i\in K,a_n\neq 0$
+        Grad $\lambda(f)=n=\deg f(x)$
+        Sei $g(x):=b_lx^l+\hdots+b_0,b_i\in K,b_l\neq 0$
+
+        Division mit Rest:\\
+        \begin{itemize}
+            \item
+                ist $\lambda(f)=\lambda(g)=0:f(x)=a_0,
+                g(x)=b_0$
+                \begin{itemize}
+                    \item
+                        ist $g(x)=0:f(x)=g(x)+f(x)$
+                    \item
+                        ist $g(x)\neq 0:$ Division in K
+                \end{itemize}
+            \item
+                ist $\lambda(f)<\lambda(g):f(x)=
+                0\cdot g(x)+f(x)\Rightarrow
+                q(x)=0,r(x)=f(x)$
+            \item
+                ist $\lambda(f)>\lambda(g)$\\
+                Induktion nach $n=\deg f(x)$
+                $n=0$ bereits abgedeckt.\\
+                Sei $n\geq 1$
+                Wir suchen $f(x)=q(x)g(x)+r(x)$
+
+                Sei $h(x):=x^{n-l}\cdot\frac{a_n}{b_l}g(x)$
+                Dann ist $\lambda(h)=n-l+l=n$\\
+                Induktion auf $f-h$ anwenden
+                ($\deg(f-h)<n$)
+                \begin{align*}
+                    f(x)-h(x)&=q(x)g(x)+r(x)\\
+                    f(x)&=h(x)+q(x)g(x)+r(x)\\
+                    &=
+                    \underbrace{\left(\frac{a_n}{b_l}x^{n-l}
+                    +q(x)\right)}_{\text{Neues } q(x)}
+                    g(x)r(x)
+                \end{align*}
+                mit $\deg r(x)<\lambda(g(x))$ oder $r(x)=0$
+        \end{itemize}
+    \item
+        $R$ Ring der ganzen Gaußschen Zahlen
+        \begin{equation*}
+            R=\Z[i]=\{a+bi|a,b\in\Z\}
+        \end{equation*}
+        $\Z[i]$ ist ein euklidischer Ring: Wir nehmen
+        $\lambda(x=a+bi)=|x|_2^2=a^2+b^2 \in\N_0$\\
+        \color{blue}
+        (Norm $N(z)=\lambda(z)$)\\
+        \color{purple}
+        Es gilt $z=z_1\cdot z_2\Rightarrow
+        |z|=|z_1|\cdot |z_2|\Rightarrow \lambda$
+        ist multiplikativ\\
+        Sei $z_1,z_2\neq 0$ gegeben: $\frac{z_1}{z_2}\in\C$
+        ist $z_1=a+bi,z_2=c+di,z_1,z_2\in\Z[i]$
+        \begin{align*}
+            \frac{z_1}{z_2}
+            &=\frac{a+bi}{c+di}\\
+            &=\frac{(a+bi)(c-di)}{(c+di)(c-di)}\\
+            &=\frac{(ac+bd)+(bc+ad)i}{c^2+d^2}
+        \end{align*}
+        Nicht im Allgemeinen in $\Z[i]$\\
+        \begin{tikzpicture}
+            % grid
+            \draw[color=black] (-4,-4) -- (0,-4);
+            \draw[color=black] (-4,-4) -- (-4,0);
+            \draw[color=black] (0,0) -- (0,-4);
+            \draw[color=black] (0,0) -- (-4,0);
+
+            \draw[color=black] (0,0) -- (-4,-4);
+
+            \draw[color=green] (-4,-2) -- (0,-2);
+            \draw[color=green] (-2,-4) -- (-2,0);
+
+            % points
+            \draw[color=blue] node at (0, -4) {$\times$};
+            \draw[color=blue] (0, -4) node[below] {$q$};
+
+            \draw[color=purple] node at (-1, -3) {$\times$};
+            \draw[color=purple] (-1, -3) node[below] {$\frac{z_1}{z_2}$};
+
+            % measurements
+            \draw[color=black] (-2, -4) node[below] {$1$};
+            \draw[color=black] (-4, -2) node[left] {$1$};
+
+            \draw[color=green] (-3, -2) node[below] {$\frac{1}{2}$};
+            \draw[color=green] (-2, -1) node[right] {$\frac{1}{2}$};
+
+            \draw[color=black] (-2.9, -3) node[below] {$\frac{1}{2}$};
+        \end{tikzpicture}
+
+        $z_1,z_2\in\Z[i]$ gegeben
+        \begin{align*}
+            z_1&=z_2\underbrace{q}_{\in\Z[i]}+
+            \underbrace{(z_1-z_2q)}_{\in\Z[i]}
+        \end{align*}
+        $r:=z_1-z_2q$
+        \begin{itemize}
+            \item
+                Ist $r=0$
+            \item
+                Ist $r\neq 0:$
+                \begin{align*}
+                    \lambda(r)&=|r|_2^2\\
+                    &=|z_2\left(
+                    \frac{z_1}{z_2}-q
+                    \right)|_2^2\\
+                    &=\underbrace{|z_2|_2^2}_{\lambda(z_2)}
+                    \cdot\underbrace{|\frac{z_1}{z_2}-q
+                    |_2^2}_{\leq\left(\frac{\sqrt{2}}{2}^2
+                    \right)=1}\\
+                    \Rightarrow\lambda(r)&\leq\lambda(z_2)
+                \end{align*}
+        \end{itemize}
+        $\Rightarrow \Z[i]$ ist ein euklidischer Ring
 \end{itemize}
 \color{blue}
 Es gilt
@@ -329,4 +445,54 @@ Es gilt
         \end{itemize}
 \end{itemize}
 \color{black}
+\begin{defi}
+    Sei $R$ ein Integritätsbereich und $a,b\in R$
+    \begin{enumerate}[(a)]
+        \item
+            $a$ \textbf{teilt} $b(a|b)\Leftrightarrow
+            \underset{c\in R}\exists ac=b$
+
+            \color{blue}
+            c in ist eindeutig, falls es existiert
+            $ac=b=ac'\Rightarrow ac-ac'=0
+            \Rightarrow \underbrace{a}_{\neq 0}(c-c')=0
+            \Rightarrow c=c'$
+            \color{black}
+        \item
+            $d\in R$ ist ein \textbf{größter gemeinsamer
+            Teiler} von $a$ und $b(d=\ggT(a,b)$\\
+            $\Leftrightarrow d|a\land d|b\land
+            \underset{e\in R}\forall e|a\land e|b
+            \Rightarrow e|d$
+        \item
+            $f\in R$ ist ein \textbf{kleinstes gemeinsames
+            Vielfaches} von $a,b (f=\kgV(a,b)$\\
+            $\Leftrightarrow a|f\land b|f\land
+            \underset{g\in R}\forall a|g\land b|g
+            \Rightarrow f|g$
+    \end{enumerate}
+\end{defi}
+\begin{proposition}
+	Sei $R$ ein euklidischer Ring und $a,b\in R$.
+	Dann existieren $\ggT(a,b)$ und $\kgV(a,b)$
+	und Können mit dem euklidischen Algorithmus
+	berechnet werden.
+
+	Beweis:
+	Sei OBDA $\lambda(a)\geq\lambda(b)$.
+	\begin{equation*}
+    	a_1=a,a_2=b,\underset{q,r}\exists a_1=qa_2+r
+    \end{equation*}
+    \begin{itemize}
+        \item
+            Ist $r=0\Rightarrow a_1=qa_2\Rightarrow
+            a_2=\ggT(a_1,a_2)$
+        \item
+            Ist $r\neq 0\Rightarrow
+            a_1=q_1a_2+a_3,a_2=q_2+a_3+a_4\hdots$
+
+            $\lambda(a_1)\geq\lambda(a_2)>\lambda(a_3)
+            >\hdots\geq 0$
+    \end{itemize}
+\end{proposition}
 \end{document}
