@@ -105,4 +105,167 @@
         mit einer Nullstelle für $x=1$.
         Also ist $m\in\{0,2\}$
 \end{enumerate}
+\subsection{}
+\color{blue}
+Sei $M$ eine nichtleere Menge und $\mathcal P(M)$ die Menge
+aller Teilmengen von $M$.
+Bestimmen Sie für jede der folgenden Mengen $R$, ob sie mit
+angegebenen Operationen einen Ring bilden.\\
+\color{purple}
+Exkurs Eindutigkeit neutrales Element:\\
+Sei $(R,+,\cdot,0,1)$ ein Beliebiger ring mit
+\begin{itemize}
+    \item
+        $0_R,0'_R\in R$ neutralen Elemente der Addition.
+        So ist $0'_R=0_R+0'_R=0_R$.
+    \item
+        $1_R,1'_R\in R$ neutralen Elemente der
+        Multiplikation.
+        So ist $1'_R=1_R\cdot 1'_R=1_R$.
+\end{itemize}
+Es gibt also jeweils ein neutrales Element pro Ring.
+\color{black}
+\begin{enumerate}[(a)]
+    \item
+        \color{blue}
+        $R=\mathcal P(M)$ mit der Addition
+        $A\Delta B:=(A\cup B)\setminus (A\cap B)$
+        und der Multiplikation
+        $A*B:=A\cap B$\\
+        \color{black}
+        Das neutrale Element der Addition ist $\emptyset$,
+        da $\underset{m\in R}\forall m\Delta \emptyset=m,
+        \emptyset\Delta m=m$.
+
+        \begin{itemize}
+            \item
+                Assoziativität $\Delta$:\\
+                Zunächst zeigen wir $A\Delta B=\{x\in M|(x\in A\land x\notin B)\lor (x\notin A\land x\in B)\}$.
+                Hierfür nutzen wir folgende Tabelle:\\
+                \begin{tabular}{ll|l}
+                    $x\in A$&$x\in B$&$x\in A\Delta B$\\
+                    \hline
+                    0&0&0\\
+                    0&1&1\\
+                    1&0&1\\
+                    1&1&0
+                \end{tabular}\\
+                Demnach gilt
+                \begin{align*}
+                    \underset{A,B,C\in R}\forall (A\Delta B)\Delta C
+                    &=\{x\in M|(x\in A\land x\notin B)\lor (x\notin A\land x\in B)\}\Delta C\\
+                    &=\{x\in M|(x\in A\Delta B\land x\notin C)\lor (x\notin A\Delta B\land x\in C)\}\\
+                    &=\{x\in M|
+                    [((x\in A\land x\notin B)\lor (x\notin A\land x\in B))\land x\notin C]\\
+                    &\lor[((x\in A\land x\in B)\lor (x\notin A\land x\notin B))\land x\in C]
+                    \}\\
+                    &=\{x\in M|
+                    [(x\in A\land x\notin B\land x\notin C)\lor (x\notin A\land x\in B\land x\notin C)]\\
+                    &\lor[(x\in A\land x\in B\land x\in C)\lor (x\notin A\land x\notin B\land x\in C)]
+                    \}\\
+                    &=\{x\in M|
+                    (x\in A\land x\notin B\land x\notin C)\lor (x\notin A\land x\in B\land x\notin C)\\
+                    &\lor(x\in A\land x\in B\land x\in C)\lor (x\notin A\land x\notin B\land x\in C)
+                    \}\\
+                    &=\{x\in M|
+                    (x\in A\land x\in B\land x\in C)
+                    \lor (x\in A\land x\notin B\land x\notin C)\\
+                    &\lor (x\notin A\land x\in B\land x\notin C)
+                    \lor (x\notin A\land x\notin B\land x\in C)
+                    \}\\
+                    &=\{x\in M|
+                    [x\in A\land ((x\in B\land x\in C)
+                    \lor (x\notin B\land x\notin C))]\\
+                    &\lor
+                    [x\notin A\land((x\in B\land x\notin C)
+                    \lor(x\notin B\land x\in C))]
+                    \}\\
+                    &=\{x\in M|
+                    [x\in A\land ((x\in B\land x\in C)
+                    \lor (x\notin B\land x\notin C))]\\
+                    &\lor
+                    [x\notin A\land((x\in B\land x\notin C)
+                    \lor(x\notin B\land x\in C))]
+                    \}\\
+                    &=\{x\in M|[x\in A\land (x\notin B\Delta C)]
+                    \lor[x\notin A\land(x\in B\Delta C)]\}\\
+                    &=A\Delta(B\Delta C)
+                \end{align*}
+            \item
+                Kommutativität $\Delta$:\\
+                Da $\cup,\cap$ Kommutativ sind gilt:
+                \begin{equation*}
+                    \underset{A,B\in R}\forall A\Delta B=(A\cup B)\setminus(A\cap B)=(B\cup A)\setminus(B\cap A)=B\Delta A
+                \end{equation*}
+            \item
+                Kommutativität $*$:\\
+                Da $\cap$ Kommutativ ist gilt:
+                \begin{equation*}
+                    \underset{A,B\in R}\forall A*B=A\cap B=B\cap A=B*A
+                \end{equation*}
+            \item
+                $0_R=\emptyset\in R$, da
+                \begin{equation*}
+                    \underset{A\in R}\forall
+                    A\Delta\emptyset=(A\cup\emptyset)\setminus(A\cap\emptyset)=A\setminus\emptyset=A
+                \end{equation*}
+            \item
+                $1_R=M\in R$, da
+                \begin{align*}
+                    \underset{A\in R}\forall
+                    A*M=A\cap M=A=M\cap A=M*A&&(A\subseteq M)
+                \end{align*}
+            \item
+                $-A=A\in R$, da
+                \begin{equation*}
+                    -A\Delta A=A\Delta A=(A\cup A)\setminus (A\cap A)=A\setminus A=\emptyset=O_R
+                \end{equation*}
+            \item
+                Distributivgesetz:\\
+                Es gilt
+                \begin{align*}
+                    (A\Delta B)*C
+                    &=[(A\cup B)\setminus (A\cap B)]\cap C\\
+                    &=[(A\cup B)\cap C]\setminus (A\cap B)]\\
+                    &=[(A\cup B)\cap C]\setminus (A\cap B\cap C)]\\
+                    &=[(A\cap C)\cup (B\cap C)]\setminus (A\cap B\cap C)]\\
+                    &=[(A\cap C)\cup (B\cap C)]\setminus [(A\cap C)\cap (B\cap C)]\\
+                    &=(A*C)\Delta(B*C)
+                \end{align*}
+                Zu $(1)$: Es ist
+                \begin{align*}
+                    ((A\cup B)\cap C)\setminus (A\cap B)
+                    &=
+                    ((A\cup B)\cap C)\setminus ((A\cap B\cap C)\cup (A\cap B\cap (M\setminus C))
+                    ((A\cup B)\cap C)\setminus (A\cap B\cap C)
+                \end{align*}
+                Da $((A\cup B)\cap C)\cap (M\setminus C)=\emptyset$
+        \end{itemize}
+    \item
+        \color{blue}
+        $R=\mathcal P(M)$ mit der Addition $A+B=A\cup B$ und der Multiplikation $A*B=A\cap B$;\\
+        \color{black}
+        Es ist $0_R=\emptyset\in R$,
+        Da $\underset{A\in R}\forall A\cup \emptyset=A$.
+
+        Wir nehmen an
+        \begin{align*}
+            \underset{A\in R}\forall\underset{-A\in R}\exists -A+A=0_R\\
+            \Rightarrow\underset{-M\in R}\exists -M+M=0_R\\
+            \Rightarrow\underset{-M\in R}\exists -M\cup M=\emptyset\\
+            \Rightarrow M=\emptyset
+        \end{align*}
+        Widerspruch zur Annahme $\Rightarrow$ Es existiert kein inverses Element der Addition.
+    \item
+        \color{blue}
+        $R=\R$ mit der üblichen Addition und der Multiplikation $a*b=a^2b$\\
+        \color{black}
+        Wir nehmen an, es existiert ein neutrales Element der Multiplikation $1_R$:
+        \begin{align*}
+            1_R*b=1_R^2b\Rightarrow 1_R\in\{-1,1\},\\
+            b*1=b^21_R
+        \end{align*}
+        Da dies aber für kein $1_R\in\{-1,1\}$ zutrifft ist ein Widerspruch zur Annahme
+        und es gibt keine Neutrales Element der Multiplikation.
+\end{enumerate}
 \end{document}
