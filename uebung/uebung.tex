@@ -268,4 +268,87 @@ Es gibt also jeweils ein neutrales Element pro Ring.
         Da dies aber für kein $1_R\in\{-1,1\}$ zutrifft ist ein Widerspruch zur Annahme
         und es gibt keine Neutrales Element der Multiplikation.
 \end{enumerate}
+\subsection{}
+\color{blue}
+Seien $n\geq 2$ und $a\in\Z$. Entscheiden Sie, ob die
+folgenden Abbildungen Ringhomomorphismen sind.
+\color{black}
+\begin{enumerate}[(a)]
+    \item
+        \color{blue}
+        $\varphi:\Z\rightarrow\Z,x\mapsto x+1$\\
+        \color{black}
+        Es ist $1_\Z=1$, $\varphi(1)=2\neq 1_\Z\Rightarrow
+        \varphi$ ist kein Ringhomomorphismus.
+    \item
+        \color{blue}
+        $\tr:\Mat(n\times n,\Q)\rightarrow\Q,A\mapsto
+        \tr(A)$\\
+        \color{black}
+        Es ist
+        $\tr(1_M)=n\neq 1=1_\Q\Rightarrow\tr$ ist kein
+        Ringhomomorphismus.
+    \item
+        \color{blue}
+        $\det:\Mat(n\times n,\Q),\rightarrow\Q,
+        A\mapsto\det(A)$\\
+        \color{black}
+        Wir wählen
+        \begin{align*}
+            A&=
+            \begin{pmatrix}
+                0&0\\
+                1&1
+            \end{pmatrix},
+            B=
+            \begin{pmatrix}
+                1&0\\
+                0&0
+            \end{pmatrix},
+            C=A+B=
+            \begin{pmatrix}
+                1&0\\
+                1&1
+            \end{pmatrix},\\
+            \det A&=0\cdot1-0\cdot1=0,
+            \det B=1\cdot0-0\cdot0=0,
+            \det C=1\cdot1-0\cdot1=1
+        \end{align*}
+        Also ist $\det(A+B)=0\neq 1=\det(C)=\det(A)+\det(B)
+        \Rightarrow\det$ ist kein Ringhomomorphismus
+    \item
+        \color{blue}
+        $\ev_a:\Z[X]\rightarrow\Z,f(X)\mapsto f(a)$\\
+        \color{black}
+        es ist also
+        \begin{equation*}
+            \ev_a\left(f(X)=\sum_{i}c_ix^i\right)
+            =\sum_{i}c_ia^i
+        \end{equation*}
+        Dann gilt:
+        \begin{itemize}
+            \item
+                $\ev_a\left(1_{\Z[X]}\right)=\ev_a(1)=1
+                =1_{\Z}$
+            \item
+                \begin{align*}
+                    \ev_a(f+f')
+                    &=\sum_i(c_i+c_i')a^i\\
+                    &=\sum_i c_ia^i+c_i'a^i\\
+                    &=\sum_i c_ia^i+\sum_i c_i'a^i\\
+                    &=\ev_a(f)+\ev_a(f')
+                \end{align*}
+            \item
+                \begin{align*}
+                    \ev_a(f\cdot f') &=\ev_a\left(
+                    \left[\sum_i c_iX^i\right]
+                    \left[\sum_j c'_jX^j\right]\right)\\
+                    &=\sum_i\sum_j c_ic'_j a^{i+j}\\
+                    &=\left(\sum_i c_ia^i\right)
+                    \left(\sum_j c'_ja^j\right)\\
+                    &=\ev_a(f)\cdot\ev_a(f')
+                \end{align*}
+        \end{itemize}
+        Also ist $\ev_a$ ein Ringhomomorphismus.
+\end{enumerate}
 \end{document}
