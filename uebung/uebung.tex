@@ -351,4 +351,118 @@ folgenden Abbildungen Ringhomomorphismen sind.
         \end{itemize}
         Also ist $\ev_a$ ein Ringhomomorphismus.
 \end{enumerate}
+\subsection{}
+\color{blue}
+Sei $R$ ein Ring. Wahr oder Falsch?
+\color{black}
+\begin{enumerate}[(a)]
+    \item
+        \color{blue}
+        Die Menge $S=\{f\in\Z[X]|\text{jede rationale
+        Nullstelle von $f$ ist eine ganze Zahl}\}$
+        ist ein Teilring von $\Z[X]$.\\
+        \color{black}
+        Es ist $0_{\Z[X]}\notin S\Rightarrow S$ ist
+        kein Teilring.
+    \item
+        \color{blue}
+        Sind $S$ und $T$ Teilringe von $R$, so ist auch
+        $S\cup T$ ein Teilring von $R$.\\
+        \color{black}
+        Sei $R=\Z[X,Y]$
+        Dann ist ist $1_{\Z[X,Y]}:(X,Y)\mapsto 1$,
+        $0_{\Z[X,Y]}:(X,Y)\mapsto 0$.
+        Weiter ist
+        \begin{itemize}
+            \item
+                \begin{align*}
+                    f&=\sum_i\sum_j c_{ij}X^iY^j,
+                    g=\sum_i\sum_j c'_{ij}X^iY^j\in\Z[X,Y]\\
+                    f+g&=\sum_i\sum_j c_{ij}X^iY^j+
+                    \sum_i\sum_j c'_{ij}X^iY^j\\
+                    &=\sum_i\sum_j c_{ij}c'_{ij}X^iY^j
+                    \in\Z[X,Y]
+                \end{align*}
+            \item
+                \begin{align*}
+                    f&=\sum_i\sum_j c_{ij}X^iY^j,
+                    g=\sum_i\sum_j c'_{ij}X^iY^j\in\Z[X,Y]\\
+                    f\cdot g&=
+                    \left[
+                        \sum_i\sum_j c_{ij}X^iY^j+
+                    \right]\cdot
+                    \left[
+                        \sum_i\sum_j c'_{ij}X^iY^j
+                    \right]\\
+                    &=
+                    \left[
+                        \sum_i\sum_j
+                        \sum_{i'}\sum_{j'}
+                        c_{ij}X^iY^j
+                        c'_{i'j'}X^{i'}Y^{j'}
+                    \right]\in\Z[X,Y]
+                \end{align*}
+        \end{itemize}
+        Also ist $\Z[X,Y]$ ein Ring.
+
+        $\Z[X],\Z[Y]$ sind teilringe,\\
+        aber für $f(X)=X,f(Y)=Y\in\Z[X]\cup\Z[Y]$ ist
+        $f(X)+f(Y)=X+Y\notin\Z[X]\cup\Z[Y]$.\\
+        Also ist $\Z[X]\cup\Z[Y]$ kein Unterring.
+    \item
+        \color{blue}
+        Sind $S$ und $T$ Teilringe von $R$, so ist auch
+        $S\cap T$ ein Teilring von $R$.\\
+        \color{black}
+        Da $S$ und $T$ Teilringe sind, gilt
+        $0,1\in S\cap T$.
+        Weiter ist
+        \begin{itemize}
+            \item
+                $a,b\in S\cap T\Rightarrow
+                (a,b\in S\Rightarrow a+b\in S)\land
+                (a,b\in T\Rightarrow a+b\in T)
+                \Rightarrow a+b\in S\cap T$\\
+                $S\cap T$ ist unter $+$ geschlossen
+            \item
+                $a,b\in S\cap T\Rightarrow
+                (a,b\in S\Rightarrow a\cdot b\in S)\land
+                (a,b\in T\Rightarrow a\cdot b\in T)
+                \Rightarrow a\cdot b\in S\cap T$\\
+                $S\cap T$ ist unter $\cdot$ geschlossen
+        \end{itemize}
+        $\Rightarrow S\cap T$ ist ein Unterring.
+    \item
+        \color{blue}
+        Ist $f:R\rightarrow R$ ein Ringhomomorphismus,
+        so ist
+        \begin{equation*}
+            S=\{x\in R|f(x)=x\}
+        \end{equation*}
+        ein Teilring von $R$.\\
+        \color{black}
+        Es ist $f(0)=0,f(1)=1\Rightarrow 0,1\in S$
+        Weiter gilt
+        \begin{itemize}
+            \item
+                Seien  $a,b\in S$
+                \begin{align*}
+                    a\in S\Rightarrow a=f(a),
+                    b\in S\Rightarrow b=f(b)\\
+                    a+b=f(a)+f(b)=f(a+b)\in S
+                \end{align*}
+                $S$ ist unter $+$ geschlossen
+            \item
+                Seien  $a,b\in S$
+                \begin{align*}
+                    a\in S\Rightarrow a=f(a),
+                    b\in S\Rightarrow b=f(b)\\
+                    a\cdot b=f(a)\cdot f(b)=f(a\cdot b)
+                    \in S
+                \end{align*}
+                $S$ ist unter $\cdot$ geschlossen
+        \end{itemize}
+        $\Rightarrow S$ ist ein Unterring.
+\end{enumerate}
+\subsection{}
 \end{document}
