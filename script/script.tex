@@ -9,6 +9,7 @@
 
 \newtheorem{thm}{Theorem}[section]
 \newtheorem{defi}[thm]{Definition}
+\newtheorem{lemma}[thm]{Lemma}
 \newtheorem{proposition}[thm]{Proposition}
 \newcommand{\N}{\mathbb{N}}
 \newcommand{\Z}{\mathbb{Z}}
@@ -211,7 +212,7 @@ $\underset{m\in\N}\forall A(m)$ wahr
     Sei $R$ ein kommutativer Ring.
     Ein Element $a\in R$ ist ein \textbf{Nullteiler},
     wenn $\underset{b\in R\setminus\{0_R\}}\exists
-    a\cdot_R b=0_R$. $R$ ist ein Itegritätsbereich,
+    a\cdot_R b=0_R$. $R$ ist ein Integritätsbereich,
     wenn $0_R$ der einzige Nullteiler ist
     ($R$ ist Nullteilerfrei).
 \end{defi}
@@ -473,15 +474,15 @@ Es gilt
     \end{enumerate}
 \end{defi}
 \begin{proposition}
-	Sei $R$ ein euklidischer Ring und $a,b\in R$.
-	Dann existieren $\ggT(a,b)$ und $\kgV(a,b)$
-	und Können mit dem euklidischen Algorithmus
-	berechnet werden.
+    Sei $R$ ein euklidischer Ring und $a,b\in R$.
+    Dann existieren $\ggT(a,b)$ und $\kgV(a,b)$
+    und Können mit dem euklidischen Algorithmus
+    berechnet werden.
 
-	Beweis:
-	Sei OBDA $\lambda(a)\geq\lambda(b)$.
-	\begin{equation*}
-    	a_1=a,a_2=b,\underset{q,r}\exists a_1=qa_2+r
+    Beweis:
+    Sei OBDA $\lambda(a)\geq\lambda(b)$.
+    \begin{equation*}
+        a_1=a,a_2=b,\underset{q,r}\exists a_1=qa_2+r
     \end{equation*}
     \begin{itemize}
         \item
@@ -494,5 +495,171 @@ Es gilt
             $\lambda(a_1)\geq\lambda(a_2)>\lambda(a_3)
             >\hdots\geq 0$
     \end{itemize}
+    $a,b\in R$ euklidischer Ring,
+    $\kgV(a,b)=\frac{ab}{\ggT(a,b)}$
+    denn
+    $d:=\ggT(a,b)\Rightarrow a=c_1\cdot d,b=c_2\cdot d$
+    mit $c_1,c_2$ teilerfremd $\Rightarrow a=c_1d|c_1c_2d,
+    b=c_2d|c_1c_2d$
 \end{proposition}
+Der Euklidische Algorithmus liefert auch $s,t\in R$ mit
+$\ggT(a,b)=sa+tb$ Denn\\
+$\ggT(a,b)=d=-q_{n-1}a_n+a_{n-1}=\hdots\Rightarrow s,t$
+
+\begin{defi}
+    Sei $R$ ein Integritätsbereich
+    \begin{enumerate}[(a)]
+        \item
+            Ein invertierbares Element $a\in R$ heißt
+            \textbf{Einheit}. Notation: $R^*\subseteq R$
+            ist die Menge der Einheiten
+        \item
+            Zwei Elemente $a,b\in R$ sind
+            \textbf{assoziiert}
+            $a\sim b\Leftrightarrow a|b\land b|a$
+        \item
+            Ein Element $p\in R$ heißt \textbf{Primelement}
+            (oder \textbf{prim}), falls $p\neq 0$ und
+            $p\notin R^*$ und
+            \begin{equation*}
+                \underset{a,b\in R}\forall
+                p|ab\Rightarrow p|a\lor p|b
+            \end{equation*}
+        \item
+            Ein Element $u\in R$ heißt \textbf{Unzerlegbar}
+            (oder \textbf{irreduzierbel}), falls $u\neq 0$
+            und $u\notin R^*$ und
+            \begin{equation*}
+                \underset{a,b\in R}\forall u=a\cdot b
+                \Rightarrow a\in R^*\lor b\in R^*
+            \end{equation*}
+    \end{enumerate}
+\end{defi}
+\color{purple}
+\begin{itemize}
+    \item
+        $R=K$ Körper $a\in K\Rightarrow a=0\lor a\neq 0
+        \Rightarrow\underset{a^{-1}\in R}\exists aa^{-1}=1$
+        also ist $a$ eine Einheit. Es gibt keine
+        Primelemente und keine unzerlegbaren Elemente in $K$.
+    \item
+        $R=\Z:(c)\Leftrightarrow(d)$
+\end{itemize}
+\color{black}
+\begin{lemma}
+    Sei $R$ ein Integritätsberich. Sei $p$ prim, dann
+    ist $p$ unzerlegbar.
+\end{lemma}
+Beweis: Sei $p$ prim, $p=a\cdot b\Rightarrow p|a\lor p|b$
+Wir zeigen $a$ oder $b$ ist eine Einheit.
+es ist weiter $p|a\cdot b\Rightarrow a|p\land b|p$
+Also
+\begin{equation*}
+    \underbrace{(p|a\land a|p)}_{a\sim p}\lor
+    \underbrace{(p|b\land b|p)}_{b\sim p}
+\end{equation*}
+Sei O.B.D.A.
+\begin{align*}
+    a\sim p&\Rightarrow\underset{c}\exists a=cp\land p=ab
+    \Rightarrow a=cp=cab\Rightarrow a-cab=0
+    \Rightarrow a(1-bc)=0\\
+    &\overset{a\neq 0}\Rightarrow 1-bc=0
+    \Rightarrow 1=bc=cb \Rightarrow b=c^{-1}
+\end{align*}
+Also sind $b$ und $c$ Einheiten. Also ist $p$ unzerlegbar.
+
+\color{blue}
+Die Gegenrichtung (unzerlegbar $\Rightarrow$ prim)
+ist nicht im Allgemeinen Wahr.
+\color{black}
+\begin{defi}
+    Sei $R$ ein Integritätsbereich.
+    $R$ ist ein \textbf{Faktorieller Ring}, wenn
+    gilt:
+    \begin{enumerate}[(1)]
+        \item
+            Jedes Element $a\in R,a\neq 0$ ist ein
+            endliches Produkt $a=u_1\cdot\hdots\cdot u_n$ von
+            unzerlegbaren Elementen $u_i$,
+            eindeutig bis auf Reihenfolge und Einheiten:
+            Falls
+            $a=u_1\cdot\hdots\cdot u_n=
+            v_1\cdot\hdots\cdot v_l\in R$ unzerlegbar, dann
+            ist $n=l$ und
+            \begin{equation*}
+                \underset{\pi\in\sum_n}\exists u_i\sim
+                v_{\pi(i)}
+            \end{equation*}
+            Wobei $\sum_n$ die symmetrische Gruppe auf $n$
+            Buchstaben.
+        \item
+            Jedes Element $a\in R,a\neq 0,a\notin R^*$
+            ist ein endliches Produkt
+            $a=u_1\cdot\hdots\cdot u_n$ von unzerlegbaren
+            Elementen $u_1,\hdots,u_n$ und jedes unzerlegbare
+            Element $u\in R$ ist Primelement.
+    \end{enumerate}
+\end{defi}
+Beweis der Äquivalenz von (1) und (2):
+\begin{itemize}
+    \item
+        $(1)\Rightarrow (2)$:
+        Sei $u|ab\Rightarrow\underset{d}\exists ud=ab$
+        z.z. $u|a$ oder $u|b$
+        \begin{itemize}
+            \item
+                ist $a=0$ oder $b=0$, trivial
+            \item
+                ist $a$ eine Einheit:
+                $u|a^{-1}(ab)=b$
+            \item
+                Sei nun $a,b\neq 0,a\notin R^*$
+                Falls $d\in R^* ud=ab\Rightarrow
+                u=(d^{-1}a)b$ Widerspruch,
+                also $d\notin R^*$
+        \end{itemize}
+        Vorraussetzung $(1)\Rightarrow\exists$ Zerlegungen
+        $a=p_1\cdot\hdots\cdot p_n,b=q_1\cdot\hdots\cdot
+        q_l, d=v_1\cdot\hdots\cdot v_k$ jeweils Produkte
+        aus unzerlegbaren Elementen. $ud=ab\Rightarrow
+        uv_1\cdot\hdots\cdot v_k=p_1\cdot\hdots\cdot p_n
+        q_1\cdot\hdots\cdot q_l\overset{(1)}\Rightarrow$
+        eindeutig $\Rightarrow\underset{i}\exists u_\sim p_i
+        \lor u\sim q_i\Rightarrow u|a\lor u|b$
+    \item
+        $(2)\Rightarrow (1)$ Sei $a=u_1\cdot\hdots\cdot u_n=
+        v_1\cdot\hdots\cdot v_l$ (alle $u_i,v_j$ unzerlegbar)
+        z.z. $n=l,\underset{\pi\in\sum_n}\exists u_i\sim
+        v_{\pi(n)}$\\
+        Induktion nach $n+l$, Induktionsanfang $n+l=1,n=l=1
+        \Rightarrow a=u_1=v_1$\\
+        Induktionsschritt $u_1|a=v_1\cdot\hdots\cdot v_l$.
+        $u_1$ ist prim $\Rightarrow u_1$ teilt ein $v_j$
+        $u_1|v_j=u_1\cdot s$ unzerlegbar also ist $s$ eine
+        Einheit, $u_1\sim v_j$, $u_1=v_j\cdot s^{-1}$
+        Nach kürzen folgt:
+        \begin{equation*}
+            u_2\cdot\hdots\cdot u_n=s^{-1}v_i\cdot\hdots
+            \cdot v_{j-1}v_{j+1}\cdot\hdots\cdot v_l
+        \end{equation*}
+        Anzahl Faktoren $n-1,l-1\rightarrow n+l-2$
+\end{itemize}
+Eindeutige Primfaktorzerlegung bestimmt $\ggT$ und $\kgV$
+und Teilbarkeit:\\
+Gegeben $st,\in\R^*,a,b:a=sp_1^{\alpha_1}\hdots
+p_n^{\alpha_n}, b=tp_1^{\beta_1}\hdots p_n^{\beta_n}$ mit
+$\alpha_i, \beta_j\neq 0,p_1,\hdots,p_n$ paarweise nicht
+assoziierte Primelemente
+$a|b\Leftrightarrow\underset{i}\forall\alpha_i\leq\beta_i$,
+\begin{itemize}
+    \item
+        $\ggT(a,b)\sim p_1^{m_1}p_2^{m_2}\hdots
+        p_n^{m_n}$ mit $m_i=\min(\alpha_i,\beta_i)$
+    \item
+        $\kgV(a,b)\sim p_1^{M_1}p_2^{M_2}\hdots
+        p_n^{M_n}$ mit $M_i=\max(\alpha_i,\beta_i)$
+    \item
+        $a|bc$ mit $b$ und $c$ teilerfremd, d.h.
+        $\ggT(b,a)=1\Rightarrow a|c$
+\end{itemize}
 \end{document}
