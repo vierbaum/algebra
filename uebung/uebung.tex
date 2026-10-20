@@ -474,6 +474,12 @@ Beweisen oder widerlegen Sie folgende Aussagen
         ist R ein Integritätsbereich und gilt $a^2=b^2$ für
         $a,b\in R$ so ist $a=b$ oder $a=-b$.\\
         \color{black}
+        \begin{align*}
+            a^2&=b^2\\
+            \Rightarrow a^2-b^2&=0\\
+            \Rightarrow (a-b)(a+b)&=0\\
+            \Rightarrow a=b&\lor a=-b
+        \end{align*}
     \item
         \color{blue}
         Der Ring $\Z/4\Z$ ist ein Integritätsbereich.\\
@@ -504,11 +510,27 @@ Beweisen oder widerlegen Sie folgende Aussagen
         so ist jeder Ringhomomorphismus
         $\varphi:R\rightarrow S$ injektiv.\\
         \color{black}
+        $\varphi:\Z\rightarrow\Z/5\Z, f:n\mapsto n\mod 5$,
+        aber $\varphi(0)=0=\varphi(5)$
     \item
         \color{blue}
         Gilt in einem Ring $R$ die Gleichung $x^2=x$ für
         jedes $x\in R$, so gilt $x+x=0$ für jedes
         $x\in R$ und $R$ ist kommutativ.\\
         \color{black}
+        \begin{align*}
+            (x+x)^2&=x+x
+            \Rightarrow x^2+x^2+x^2+x^2=(x+x)\\
+            \Rightarrow x+x+x+x=x+x\\
+            \Rightarrow x+x=0\\
+        \end{align*}
+        $x,y\in R$
+        \begin{align*}
+            (x+y)^2=x+y\\
+            x^2+xy+yx+y^2=x+y\\
+            x+xy+yx+y=x+y
+            xy+yx=0\\
+            xy=-yx=yx
+        \end{align*}
 \end{enumerate}
 \end{document}
