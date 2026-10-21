@@ -533,4 +533,86 @@ Beweisen oder widerlegen Sie folgende Aussagen
             xy=-yx=yx
         \end{align*}
 \end{enumerate}
+\section{Vortragsübungen}
+\paragraph{20.10.26}
+\begin{enumerate}[1.]
+    \item
+        Vergleich prim / unzerlegbar
+        \begin{itemize}
+            \item
+                Sei $K$ ein Körper, $K[x]$ der Polynomring
+                in einer Variablen $K[x]$ hat als $K-VR$
+                Basis $1,x,x^2,x^3,\hdots$. Sei $R$ der
+                Untervektorraum von $K[x]$ mit Basis
+                $1,x^2,x^3\hdots(x^n,n\neq 1)$
+                \begin{align*}
+                    a_0+a_2x^2+a_3x^3+\hdots+a_nx^n\in R
+                \end{align*}
+                $R$ ist ein Ring, sogar ein Teilring von
+                $K[x]$: $0_R,1_R\in R$, abgeschlossen
+                unter Addition. und unter Multiplikation.
+                Demnach ist $R$ ein Unterring.
+            \item
+                $K[x]$ ist Kommutativ $\Rightarrow R$
+                ist Kommutativ\\
+                $K[x]$ ist nullteilerfrei $\Rightarrow R$
+                ist nullteilerfrei\\
+                $K[x]$ ist Integritätsbreich $\Rightarrow R$
+                ist Integritätsbereich\\
+        \end{itemize}
+        In $K[x]: x$ ist unzerlegbar:
+        \begin{equation*}
+            \underbrace{x}_{\deg 1}=
+            \underbrace{f(x)\cdot g(x)}_
+            {\deg f+\deg g=1}
+        \end{equation*}
+        Also ist entweder $\deg f=0$ oder $\deg g=0$
+
+        $x^2=x\cdot x$ ist keine Zerlegung in $R(x\notin R)$
+        \begin{equation*}
+            x^2=(a_0+a_2x^2+\hdots+a_nx^n)\cdot
+            (b_0+b_2x^2+\hdots+b_lx^l)
+        \end{equation*}
+        geht nur, wenn $\deg f+\deg g=2$. Es gibt kein
+        Polynom von Grad 1 in $R$.
+        $\Rightarrow f$ oder $g$ ist Konstant $\neq 0$.
+        Ergebnis: $x^2$ ist Unzerlegbar.
+
+        In $K[x]$ ist $x^3=x\cdot x\cdot x$ zerlegbar.\\
+        In $R$ ist $x^3$ unzerlegbar.\\
+        $x^3=f\cdot g,\deg x^3=3,\deg f+\deg g=3$.
+        Es gibt aber kein Polynom mit Grad 1 in $R$.
+
+        $x^2$ ist kein Teiler von $x^3$ (unzerlegbar)
+
+        Es ist $x^6=x^3\cdot x^3=x^2\cdot x^2\cdot x^2$
+        aber $x^2\nsim x^3\Rightarrow x^6$ hat zwei
+        verschiedene Zerlegungen in Produkte von
+        unzerlegbaren Elementen. $R$ ist kein Faktorieller
+        Ring (Zerlegung nicht eindeutig).
+
+        \begin{align*}
+            x^6&=x^3\cdot x^3=x^2\cdot x^2\cdot x^2\\
+            &\Rightarrow x^3|x^6, x^2|x^6
+        \end{align*}
+        Falls $x^2$ prim ist: $x^2|x^6\Rightarrow x^2|x^3$
+        Da $x^3$ unzerlegbar ist, ist $x^2$ nicht prim.
+
+        Sei $R:=\{f(x)=a_0+a_1x+\hdots+a_nx^n|a_n
+        \in\R(n\geq 1),a_0\in\Q\}.R$ ist ein Teilring
+        von $\R[x]$
+
+        $x\in R$ ist unzerlegbar.
+
+        $2x^2=\sqrt{2}x\cdot\sqrt{2}x$. Falls $x$ prim ist,
+        gilt $x|\sqrt{2}x$, da $\sqrt{2}\notin R\Rightarrow
+        x$ teilt $\sqrt{2}x$ nicht. Demnach ist $x$
+        nicht prim.
+
+        $K$ Körper $\Rightarrow K[x]$ faktoriell.
+        Also prim=unzerlegbar.
+        Wie sehen unzerlegbare Polynome aus?
+        $f(x)=x-x_0,\left(g(x)=ax-y_0\sim x-\frac{1}{a}
+        y_0\right)$
+\end{enumerate}
 \end{document}
