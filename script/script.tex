@@ -11,6 +11,7 @@
 \newtheorem{defi}[thm]{Definition}
 \newtheorem{lemma}[thm]{Lemma}
 \newtheorem{proposition}[thm]{Proposition}
+\newtheorem{korollar}[thm]{Kororollar}
 \newcommand{\N}{\mathbb{N}}
 \newcommand{\Z}{\mathbb{Z}}
 \newcommand{\R}{\mathbb{R}}
@@ -662,4 +663,139 @@ $a|b\Leftrightarrow\underset{i}\forall\alpha_i\leq\beta_i$,
         $a|bc$ mit $b$ und $c$ teilerfremd, d.h.
         $\ggT(b,a)=1\Rightarrow a|c$
 \end{itemize}
+\begin{defi}
+    Sei $R$ ein Ring und $I\subset R$, $I$ ist ein
+    \textbf{Linksideal} ($I\unlhd_l R$), falls
+    \begin{itemize}
+        \item
+            $0_R\in I$
+        \item
+            $I$ abgeschlossen unter $+_R$,
+        \item
+            $\underset{a\in I}\forall -a\in I$,
+        \item
+            $\underset{a\in I}\forall\underset{r\in R}
+            \forall r\cdot a\in I$
+    \end{itemize}
+    \textbf{Rechtsideal} ($I\unlhd_r R$) mit $\underset
+    {a\in I}\forall \underset{r\in R}\forall a\cdot r\in I$\\
+    $I$ ist \textbf{zweiseitiges Ideal}, falls es ein Links-
+    und Rechtsideal ist ($I\unlhd R$).\\
+\end{defi}
+\color{purple}
+\begin{itemize}
+    \item
+        Falls $R$ Kommutativ: $I\unlhd_l R\Leftrightarrow
+        I\unlhd_r R\Leftrightarrow I\unlhd R$\\
+        \begin{equation*}
+              (I\unlhd_l R\lor I\unlhd_r R)\land 1_R\in I
+        \Rightarrow I=R
+        \end{equation*}
+        $n\in\N_0,n\Z=\{n\cdot a|a\in\Z\}$, es ist
+        $n\Z\unlhd\Z$\\
+        Es sind $I_j$ ideale, dann ist
+        $\underset{j}\bigcap I_j$ auch ein Ideal.\\
+        Seien $I,J$ Ideale, dann ist $I+J:=
+        \{a+b|a\in I,b\in J\}$ auch ein Ideal.\\
+    \item
+        $R Ring,a\in R, R\cdot a:=\{r\cdot a|r\in R\}$ ist ein
+        Linksideal
+\end{itemize}
+\color{black}
+\begin{defi}
+    Sei $R$ ein Integritätsbereich. Ein Ideal $I\unlhd R$
+    ist ein \textbf{Hauptideal}, wenn
+    \begin{equation*}
+        \underset{a\in R}\exists I=R\cdot a
+    \end{equation*}
+    $R$ ist ein \textbf{Hauptidealring} (HIR), wenn jedes
+    Ideal in Hauptideal ist.
+\end{defi}
+Ist $R$ ein euklidischer Ring $\Rightarrow R$ ist Hauptring
+$\Rightarrow R$ ist faktoriell
+\begin{thm}
+    Sei $R$ ein euklidischer Ring. Dann ist $R$ ein
+    Hauptring.
+\end{thm}
+Beweis:
+Sei $I$ ein Ideal. $I=\{0\}=R\cdot 0, I=R=R\cdot 1$
+
+Sei $I\neq 0$ ein Ideal.
+\begin{equation*}
+    S:=\{\lambda(b)|b\in I\setminus\{0\}\}.S\neq\emptyset
+\end{equation*}
+weiter ist $\lambda_0:=\min(S)\Rightarrow\underset{a}\exists
+\lambda(a)=\lambda_0$. Sei $b\in I$ z.z. $b$ ist vielfaches
+von $a$.
+\begin{itemize}
+    \item
+        $b=0\Rightarrow b=0\cdot a$
+    \item
+        $b\neq 0$, dann ist $b=qa+r$ für $q,r\in R$ mit
+        $\lambda(r)<\lambda(a).$ oder $r<0$
+        \begin{equation*}
+            r=\underbrace{b}_{\in I}-\underbrace{qa}_{\in I}
+        \end{equation*}
+        $\lambda(r)<\lambda(a)$ geht nicht, da $\lambda(a)$
+        minimal in $S$. Also ist $\lambda(r)=0$ und
+        $b=qa+0\in Ra$
+\end{itemize}
+\begin{korollar}
+    Die Ideale in $\Z$ sind genau die Teilmengen von der
+    Form $\Z\cdot n,n\in\N_0$
+\end{korollar}
+Beweis: $\Z\cdot n=\Z\cdot (-n)$ sind alle Hauptideale,
+nach $1.14$ ist $\Z$ ein Hauptidealring, da $\Z$
+euklidisch ist.
+
+\color{purple}
+Sei $R=\Z[x]$. Sei $I:=\langle2,x\rangle$ das von $2$ und
+$x$ erzeugte Ideal. Also $I$ ist das kleinste Ideal, das
+$2,x$ als Elemente enthält.
+\begin{equation*}
+    I:=\underset{J\unlhd R,2,x\in J}\bigcap J
+\end{equation*}
+$I$ hat eine explizite Beschreibung.
+\begin{equation*}
+    I_0=\{a_0+a_1x+\hdots+a_nx^n|a_i\in\Z,2|a_0\}
+\end{equation*}
+$2\in I_0,x\in I_0\Rightarrow I\subseteq I_0$.\\
+Jedes $J$ in der Definition enthält $2,x$ also
+auch $2\Z,x^2,\hdots,x^n$ und alle $\Z$-linearkombinationen,
+Also alle $a_0+a_1x+\hdots+a_nx^n$ liegen in
+$I\Rightarrow I_0\subseteq I\Rightarrow I=I_0$
+
+Angenommen $\underset{h(x)\in R}\exists I=R\cdot h(x)$
+$2\in I\Rightarrow h(x)|2\Rightarrow h(x)$ ist ein
+konstantes Polynom mit $h(x)=a_0|2\Rightarrow a_0\in
+\{1,-1,2,-2\}$.\\
+Es ist aber $I\subsetneq R\Rightarrow\pm1\notin I$ also
+$a_0\in\{2,-2\}\Rightarrow h(x)=\pm 2$, aber
+$x\in I\Rightarrow h(x)|x$, Widerspruch, $I$ ist kein
+Hauptideal.
+$\Z[x]$ ist nach $1.14$ kein euklidischer Ring.
+\color{black}
+
+Sei $R$ ein Kommutativer Ring mit $a,b\in R$.
+Dann gilt:
+\begin{equation*}
+    a|b\Leftrightarrow\langle b\rangle\subseteq\langle a
+    \rangle
+\end{equation*}
+Denn $a|b\Rightarrow b=a\cdot c\Rightarrow b\in Ra
+\Rightarrow Rb\subseteq Ra$
+
+ist $a\sim b\Leftrightarrow a|b,b|a\Leftrightarrow Rb=Ra$
+\begin{defi}
+    Sei $R$ Kommutativ und $I\unlhd R.$ $I$ ist
+    ein \textbf{Primideal} $\Leftrightarrow I\neq R$
+    und $\underset{a,b\in R}\forall ab\in I\Rightarrow a\in
+    I\lor b\in I$
+\end{defi}
+\begin{lemma}
+    Sei $R$ Kommutativ, $p\in R,p\neq 0$ und $I=\langle p
+    \rangle$. Dann gilt: $p$ ist prim $\Leftrightarrow I$
+    ist ein Primideal.
+\end{lemma}
+% 26.10
 \end{document}
