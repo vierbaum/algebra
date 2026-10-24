@@ -12,9 +12,19 @@
 \newcommand{\F}{\mathbb{F}}
 \newcommand{\tr}{\text{tr}}
 \newcommand{\Mat}{\text{Mat}}
+\newcommand{\ggT}{\text{ggT}}
+\newcommand{\kgV}{\text{kgV}}
 \newcommand{\ev}{\text{ev}}
+\newcommand{\bij}{\text{Bij}}
+\newcommand{\ord}{\text{ord}}
+\newcommand{\id}{\text{id}}
+\newcommand{\Kern}{\text{Kern}}
+\newtheorem{thm}{Theorem}[section]
 \begin{document}
 \maketitle
+\color{purple}
+AKTUELLES BLATT UNTEN
+\color{black}
 \section{}
 \subsection{}
 \begin{enumerate}[(a)]
@@ -532,6 +542,86 @@ Beweisen oder widerlegen Sie folgende Aussagen
             xy+yx=0\\
             xy=-yx=yx
         \end{align*}
+\end{enumerate}
+\section{}
+\subsection{}
+\color{blue}
+Sei $K$ ein Körper und sei $R$ ein euklidischer Ring mit
+einer Gradfunktion $\delta:R\setminus\{0\}\rightarrow\N_0$,
+die zusätzlich
+\begin{equation*}
+    \underset{a,b\in R\setminus\{0\}}\forall
+    \delta(a)\leq\delta(ab)
+\end{equation*}
+erfüllt.
+\color{black}
+\begin{enumerate}[(a)]
+    \item
+        \color{blue}
+        Zeigen Sie, dass die Norm $N(a+bi)=a^2+b^2$ auf
+        $\Z[i]$ und die Gradfunktion $\deg$ auf
+        $K[X]$ diese zusätzliche Bedingung erfüllen.\\
+        \color{black}
+        \begin{align*}
+            \delta(zz')&=\delta((a+bi)(c+di))\\
+            &=\delta((ac-bd)+(ad+bc)i)\\
+            &=a^2c^2-2abcd+b^2d^2+a^2d^2+2abcd+b^2c^2\\
+            &=a^2c^2+b^2d^2+a^2d^2+b^2c^2\\
+            &=a^2\underbrace{(c^2+d^2)}_{\geq 1}+b^2
+            \underbrace{(d^2+c^2)}_{\geq 1}\\
+            &\geq a^2+b^2\\
+            &=\delta(z)
+        \end{align*}
+        Sei $f=a_0+\hdots+a_nx^n,g=b_0+\hdots+b_lx^l$,
+        dann ist
+        \begin{align*}
+            \deg(f\cdot d)=n+l\geq n=\deg(f)
+        \end{align*}
+    \item
+        \color{blue}
+        Zeigen Sie, dass $\delta(a)\geq\delta(1)$ für alle
+        $a\in R\setminus\{0\}$ gilt und dass $\delta(b)=
+        \delta(1)$ gilt, wenn $b$ eine Einheit ist.\\
+        \color{black}
+        \begin{align*}
+            \delta(1)&\leq\delta(1\cdot a)&(a\neq 0)\\
+            &=\delta(a)
+        \end{align*}
+        Sei $b$ eine Einheit, dann existiert $b^{-1}\in R$,
+        \begin{align*}
+            \delta(b)\leq\delta(b\cdot b^{-1})=\delta(1)
+        \end{align*}
+    \item
+        \color{blue}
+        Zeigen Sie mithilfe der Division mit Rest, dass
+        $\delta(b)\geq\delta(1)$ gilt, wenn
+        $b\in R\setminus\{0\}$ keine Einheit ist.\\
+        \color{black}
+        Wir wählen ein $b\in R\setminus\{0\}, b$ ist keine
+        Einheit
+
+        Wenn wir $1$ durch $b$ teilen, erhalten wir
+        durch division mit Rest
+        \begin{equation*}
+            1=qb+r
+        \end{equation*}
+        Da nach Annahme $b\neq 1\in R^*$ ist $r\neq 0$.
+        Nun unterscheiden wir folgende Fälle:
+        \begin{itemize}
+            \item
+                $q=0\Rightarrow r=1,\delta(b)>\delta(1)$
+            \item
+                $q\neq 0\Rightarrow r=-qb+1
+                \Rightarrow \delta(b)>\delta(1)$
+        \end{itemize}
+    \item
+        \color{blue}
+        Bestimmen Sie mithilfe von (b) und (c) alle
+        Einheiten von $\Z[i]$ und $K[X]$\\
+        \color{black}
+        $z\in\Z[i],z$ ist Einheit $\Rightarrow a^2+b^2=1$
+        (Einheitskreis).
+        $\deg(f)=1\Rightarrow f=a_0+a_1x(a_1\neq 0)$
 \end{enumerate}
 \section{Vortragsübungen}
 \paragraph{20.10.26}
