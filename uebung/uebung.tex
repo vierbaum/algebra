@@ -666,6 +666,73 @@ derselben Elemente.
             \kgV(20-i,13+9i)=(20-i)(13+9i)i,\\
         \end{align*}
 \end{enumerate}
+\subsection{}
+\color{blue}
+Sei $R$ ein Integritätsbereich und $p\in R\setminus\{0\}$
+ein Element, das keine Einheit ist.
+\color{black}
+\begin{enumerate}[(a)]
+    \item
+        \color{blue}
+        Zeigen Sie: $p$ ist genau dann unzerlegbar, wenn
+        jeder Teiler von p entweder eine Einheit oder zu
+        $p$ assoziiert ist.\\
+        \color{black}
+        \begin{itemize}
+            \item ``$\Rightarrow$''\\
+                Sei $p$ unzerlegbar, seien $a,b\in R$
+                mit $p=ab$ OBDA sei $a\in R^*$. Dann gilt:
+                \begin{align*}
+                    p&=ab\\
+                    \Leftrightarrow a^{-1}p&=b\\
+                    &\Rightarrow p|b\\
+                    &\Rightarrow p\sim b
+                \end{align*}
+            \item ``$\Leftarrow$''\\
+                Sei $p$ zerlegbar $\Rightarrow\underset
+                {a,b\in R}\exists,p=ab$ mit $a,b$ keine
+                Einheiten angenommen
+                \begin{equation*}
+                    a\sim p\Rightarrow p|a\Rightarrow
+                    \underset{q\in R}\exists pq=a
+                    \Rightarrow p=qb\Leftrightarrow
+                    \underbrace{p}_{\neq 0}
+                    \underbrace{(1-qb)}_{\neq 0}=0
+                \end{equation*}
+                Widerspruch zur Annahme $\Rightarrow a\nsim
+                p\Rightarrow a|p$
+        \end{itemize}
+    \item
+        \color{blue}
+        Seien $p,q\in R$ unzerlegbar. Zeigen Sie, dass $p|q$
+        genau dann gilt, wenn $p$ und $q$ assoziiert sind.\\
+        \color{black}
+        Seien $p,q\in R$ unzerlegbar
+        \begin{itemize}
+            \item ``$\Rightarrow$''\\
+                Sei $p|q\Rightarrow
+                \underset{a\in R}\exists q=ap
+                \Rightarrow a\in R^*\lor p\in R^*
+                \Rightarrow a\in R^*$
+                \begin{equation*}
+                    q=ap\Leftrightarrow a^{-1}q=p
+                    \Rightarrow q|p\Rightarrow p\sim q
+                \end{equation*}
+            \item ``$\Leftarrow$''\\
+                Seien $p\sim q\Rightarrow p|q$
+        \end{itemize}
+    \item
+        \color{blue}
+        Sei $R$ euklidisch und seien $p,q\in R$
+        unzerlegbar und nicht assoziiert. Zeigen Sie, dass
+        $p$ und $q$ teilerfremd sind.\\
+        \color{black}
+        Sei $R$ ein Euklidischer Ring, $p,q$ unzerlegbar.
+        Sei $d\in R$ mit $d|p,d|q\Rightarrow d\in R^*$ oder
+        $d\sim p$ (äquiv. für $q$) ang. $d\sim p,d\sim
+        q\Rightarrow d|p$. Da $\sim$ transitiv ist
+        $\Rightarrow p\sim q$. Widerspruch zur Annahme.
+\end{enumerate}
 \section{Vortragsübungen}
 \paragraph{20.10.26}
 \begin{enumerate}[1.]
