@@ -764,6 +764,68 @@ Beweisen oder widerlegen Sie die folgenden Aussagen.
         von $\Z[i]$
         \color{black}
 \end{enumerate}
+\subsection{}
+Sei $R=\Z[\sqrt{-3}]$ und sei $N:R\setminus\{0\}\rightarrow
+\N$ die durch
+\begin{equation*}
+    N(a+b\sqrt{-3})=a^2+b^2
+\end{equation*}
+definierte Abbildung.
+\color{black}
+\begin{enumerate}[(a)]
+    \item
+        \color{blue}
+        Zeigen Sie, dass $N(uv)=N(u)N(v)$ für alle $u,b\in R$
+        gilt. Folgern Sie, dass $u\in R$ genau dann eine
+        Einheit ist, wenn $N(u)=1$ und bestimmen Sie alle
+        Einheiten von $R$.\\
+        \color{black}
+        \begin{align*}
+            N(uv)&=N((a+b\sqrt{-3})(a'+b'\sqrt{-3}))\\
+            &=N(aa'+ab'\sqrt{-3}+a'b\sqrt{-3}-3bb')\\
+            &=N((aa'-3bb')+(ab'+a'b)\sqrt{-3})\\
+            &=(aa'-3bb')^2+3(ab'+a'b))\\
+            &=a^2a'^2-6aa'bb'+9b^2b'^2+3a^2b'^2
+            +6aa'bb'+3a'^2b^2\\
+            &=a^2a'^2+9b^2b'^2+3a^2b'^2+3a'^2b^2\\
+            &=(a^2+3b^2)(a'^2+3b'^2)\\
+            &=N(u)N(v)
+        \end{align*}
+    \item
+        \color{blue}
+        Sei $z\in R$ mit $N(z)>1$. Zeigen Sie, dass $z$
+        unzerlegbar ist, wenn kein Teiler $d$ von $N(z)$
+        mit $1<d<N(z)$ in der Form $a^2+3b^2$ mit $a,b\in\Z$
+        dargestellt werden kann. Folgern Sie, dass $2,
+        1+\sqrt{-3}$ und $1+\sqrt{-3}$ unzerlegbar sind.\\
+        \color{black}
+        Wir nehmen an, $z$ sei Zerlegbar mit $z=xy$,
+        $x,y>1$
+        dann gilt
+        \begin{align*}
+            N(z)&=N(xy)=
+            \underbrace{N(x)}_{>1}
+            \underbrace{N(y)}_{>1}
+            \Rightarrow 1<x<N(z)
+        \end{align*}
+
+        Da $N(2)=4$ und $1,2$ sich nicht als
+        $a^2+3b^2$ schreiben lassen, ist 2 unzerlegbar.
+        Da $N(1+\sqrt{-3})=N(1-\sqrt{-3})=4$ und weder
+        2, noch 3 $1+\sqrt{-3},1-\sqrt{-3}$ teilen sind
+        $1+\sqrt{-3},1-\sqrt{-3}$ unzerlegbar.
+    \item
+        \color{blue}
+        Finden Sie zwei verschiedene Zerlegungen von 4 in
+        unzerlegbare Faktoren. Folgern Sie, dass $R$ kein
+        faktorieller Ring ist.\\
+        \color{black}
+        Wir haben $4=2\cdot 2=(-1+\sqrt{-3})(-1-\sqrt{-3})$
+        Diese Faktoren sind nach (b) jeweils unzerlegbar,
+        jedoch ist $2\nmid -1+\sqrt{-3}$. Demnach ist
+        $2\nsim -1+\sqrt{-3}$ und  $\Z[\sqrt{-3}]$
+        ist nach 1.11 kein Faktorieller Ring.
+\end{enumerate}
 \section{Vortragsübungen}
 \paragraph{20.10.26}
 \begin{enumerate}[1.]
