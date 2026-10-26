@@ -797,5 +797,102 @@ ist $a\sim b\Leftrightarrow a|b,b|a\Leftrightarrow Rb=Ra$
     \rangle$. Dann gilt: $p$ ist prim $\Leftrightarrow I$
     ist ein Primideal.
 \end{lemma}
-% 26.10
+Beweis:
+\begin{itemize}
+    \item ``$\Leftarrow$''
+        Sei $p$ nicht prim, $p\neq 0$.
+        Falls $p\in R^*\Rightarrow\langle p\rangle=R$ kein
+        Primideal.
+        Sei $p|a\cdot b$, aber $p$ teilt nicht $a$ und $p$
+        teilt nicht $b$. $\Rightarrow a\cdot b\in\langle p
+        \rangle,a\notin\langle p\rangle,b\notin\langle p
+        \rangle$. Kein Primideal
+    \item ``$\Rightarrow$''
+        Sei $\langle p\rangle$ kein Primideal, $\langle p
+        \rangle\neq 0,\langle p\rangle\neq R\Rightarrow
+        \underset{a,b\in R}\exists a\cdot b\in\langle p
+        \rangle,a\notin\langle p\rangle,b\notin\langle p
+        \rangle\Rightarrow p|ab\Rightarrow p$ ist
+        nicht prim.
+\end{itemize}
+\color{blue}
+Vorteil von Idealen gegenüber Elementen:
+$R$ Ring, $I\unlhd R\rightarrow$ Quotientenring
+(Restklassenring) $R/I$. Eigenschaften des Rings $R/I$ sagen
+uns etwas über das Ideal $I$.
+
+Auf $R$ definieren wir eine Äquivalenzrelation
+$r\sim s\Leftrightarrow r-s\in I$.
+\begin{itemize}
+    \item reflexiv $r-r=0\in I\Rightarrow r\sim r$
+    \item symetrisch: $r\sim s\Rightarrow r-s\in I
+        \Rightarrow s-r\in I\Rightarrow s\sim r$
+    \item transitiv:
+        $r\sim s,s\sim t\Rightarrow r-s\in I,s-t\in I
+        \Rightarrow r-s+s-t\in I\Rightarrow r-t\in I
+        \Rightarrow r\sim t$
+\end{itemize}
+Die Äquivalenzklassen von $\sim$ auf $R$ sind
+die Elemente von $R/I$. $R/I$ ist ein Ring.
+\color{black}
+\begin{lemma}
+    Sei $R$ kommutativ und $I\unlhd R$. Dann ist
+    $I$ ein Primideal $\Leftrightarrow$ $R/I$ ist
+    ein Integritätsbereich.
+\end{lemma}
+Beweis:
+\begin{itemize}
+    \item ``$\Leftarrow$'':\\
+        Sei $I$ kein Primideal.
+        $\underset{a,b\in R}\exists a\cdot b\in I$
+        und $a\notin I$ und $b\notin I$ d.h.
+        $R/I:\overline{a\cdot b}=\overline{0}$,
+        $\overline{a}\neq\overline{0}$
+        und $\overline{b}\neq\overline{0}$. Also
+        ist $R/I$ kein Integritätsbereich.
+    \item ``$\Rightarrow$''\\
+    Sei $R/I$ kein Integritätsbereich. $\Rightarrow
+    \underset{a,b\in R}\exists\overline{a}\neq\overline{0}
+    \neq\overline{b}$, aber $\overline{a\cdot b}=
+    \overline{0}\Rightarrow I$ ist kein Primideal.
+\end{itemize}
+\color{purple}
+\begin{itemize}
+    \item
+        $R=\Z,I=n\Z(n\in\N_0).R/I=\Z/n\Z=\{\overline{1},\hdots,
+        \overline{n-1}\}.n=n_1\cdot n_2,n\neq\pm 1\neq n_2
+        \Rightarrow\overline{n}=\overline{0},\overline{n}=
+        \overline{n_1\cdot n_2}\Rightarrow$ Wir
+        haben Nullteiler gefunden, $\Z/n\Z$ ist kein
+        Integritätsbereich.
+        Ist $p$ prim, so ist $\Z/p\Z$ ein Körper.
+    \item
+        $R=\Z[x],I=\langle2,x\rangle$ kein Hauptideal.
+        $R/I\cong \Z/2\Z$ ist ein Integritätsbereich.
+        $I$ ist ein Primideal.
+\end{itemize}
+\color{black}
+\begin{lemma}
+    Sei $R$ ein Integritätsbereich und $u\in R,u\neq 0,
+    u\notin R^*$. Dann gilt $u$ unzerlegbar
+    $\Leftrightarrow\left[\underset{a\in R}\forall
+    \langle u\rangle\subseteq\langle a\rangle\Rightarrow
+    \langle u\rangle=\langle a\rangle\text{ oder }\langle a
+    \rangle=R\right]$
+\end{lemma}
+Beweis:
+\begin{itemize}
+    \item ``$\Rightarrow$''
+        Sei $u$ unzerlegbar und $\langle u\rangle\subseteq
+        \langle a\rangle\Rightarrow a|u\Rightarrow a\in R^*$
+        oder $b\in R^*\Rightarrow a\sim u$
+    \item ``$\Leftarrow$''
+        Sei $u=ab\Rightarrow a|u\Rightarrow\langle u\rangle
+        \subseteq\langle a\rangle$
+\end{itemize}
+\begin{defi}
+    Ein Ideal $m\ntrianglelefteq$ R ist \textbf{maximal}
+    $\Leftrightarrow$ $m\subseteq I\subseteq R\Rightarrow I
+    =m$ oder $I=R$
+\end{defi}
 \end{document}
