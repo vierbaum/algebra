@@ -862,7 +862,70 @@ definieren wir
         in der Form $d\Z$ mit $d\in\N_0$. Gilt in diesem Fall $I\cdot J=I\cap J$?
         \color{black}
 \end{enumerate}
+\subsection{}
+\color{blue}
+Sei $K$ ein Körper und
+\begin{equation*}
+    R=K[X]/(X^2),\varepsilon=X+(X^2)
+\end{equation*}
+\color{black}
+\begin{enumerate}[(a)]
+    \item
+        \color{blue}
+        Zeigen Sie, dass jedes Element von $R$ eindeutig in der Form $a+b\varepsilon$ mit $a,b\in K$
+        geschrieben werden kann.\\
+        \color{black}
+        Aus der Definition von $R$ geht hervor, dass $\overline{X^2}\equiv\overline{0}$ in $R$. Somit gilt für $f\in R$
+        \begin{equation*}
+            \deg(f)\leq 1\Rightarrow f=a+bX (a,b\in K)=a+bX+0=a+bX+b\cdot 0=a+bX+bX^2=a+b\varepsilon
+        \end{equation*}
+    \item
+        \color{blue}
+        Zeigen Sie, dass jedes Element $a+b\varepsilon$ mit $a\neq 0$ eine Einheit ist.\\
+        \color{black}
+        Für ein $f=a+bX$ unterscheiden wir
+        \begin{itemize}
+            \item $b=0\Rightarrow f=a (a\in K)$. Da $K$ ein Körper ist, existiert $a^{-1}$ in $K$, da $a\nsim a^{-1}$
+                ist $a^{-1}\in R$
+            \item $b\neq 0$, wir wählen $g=a^{-1}-ba^{-2}X$, dann gilt
+                \begin{align*}
+                    f\cdot g&=(a+bX)(a^{-1}-ba^{-2}X)\\
+                    &=aa^{-1}+(a(-ba^{-2})+ba^{-1})X-b^2a^{-2}X^2\\
+                    &=1+(-ba^{-1})+ba^{-1})X-0\\
+                    &=1\\
+                    \Rightarrow g&=f^{-1}
+                \end{align*}
+        \end{itemize}
+    \item
+        \color{blue}
+        Zeigen Sie direkt, dass die einzigen Ideale von R die Ideale $(0),(\varepsilon),R$ sind.\\
+        \color{black}
+        Es gilt
+        \begin{equation*}
+            R/(\varepsilon)=\{a|a\in K\}=K
+        \end{equation*}
+        ist ein Körper, nach 1.20 ist $(\varepsilon)$ maximal.
 
+        Wir nehmen an, es existiert ein Ideal $I\subset R$ mit $I\neq(0),I\neq(\varepsilon),I\neq R$.
+        Nach $1.20$ gilt demnach, $I\subsetneq(\varepsilon)$.
+        Da $I\neq(0)$ existiert ein $a\neq 0$ in $I$ mit
+        \begin{equation*}
+            \underset{r\in R} ar\in I
+        \end{equation*}
+        Wir nehmen an $a\in K\Rightarrow aa^{-1}=1\in I$.\\
+        Da $K\subseteq R\Rightarrow K\cdot 1\subseteq I\Rightarrow K\subseteq I$.\\
+        Da $X\in R\Rightarrow\{cX|c\in K\}\subseteq I\Rightarrow I=R$.
+        Dies ist ein Widerspruch zur Annahme $\Rightarrow$ alle
+        Elemente in $I$ müssen die Form $a+bX$ haben $(b\neq 0)$.
+        Es gilt weiter $I\subseteq\{0+bX|b\in K\}=(\varepsilon)$ Dies geht nach annahme nicht, also
+        ist $I\subseteq\{a+bX|a,b\in K,a,b\neq 0\}\Rightarrow 0\notin I\Rightarrow I$ ist kein Ideal.
+        Dies ist ein Widerspruch zur Annahme, also gibt es kein Ideal $I$ von $R$, das verschieden von
+        $(0),(\varepsilon),R$ ist.
+    \item
+        \color{blue}
+        Bestimmen Sie alle Primideale und alle maximalen Ideale von $R$.\\
+        \color{black}
+\end{enumerate}
 \section{Vortragsübungen}
 \paragraph{20.10.26}
 \begin{enumerate}[1.]
