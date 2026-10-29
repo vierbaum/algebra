@@ -21,6 +21,10 @@
 \newcommand{\Mat}{\text{Mat}}
 \newcommand{\ggT}{\text{ggT}}
 \newcommand{\kgV}{\text{kgV}}
+\newcommand{\bij}{\text{Bij}}
+\newcommand{\ord}{\text{ord}}
+\newcommand{\id}{\text{id}}
+\newcommand{\Kern}{\text{Kern}}
 \begin{document}
 \maketitle
 \section{Ganze Zahlen und Plynome}
@@ -895,4 +899,179 @@ Beweis:
     $\Leftrightarrow$ $m\subseteq I\subseteq R\Rightarrow I
     =m$ oder $I=R$
 \end{defi}
+\begin{lemma}
+    Sei $R$ ein kommutativer Ring, $I\unlhd R$, dann ist
+    $I$ maximal in $R\Leftrightarrow R/I$ ist ein Körper.
+\end{lemma}
+Beweis: ein kommutativer Ring ist ein Körper
+$\Leftrightarrow$ Jedes Element $\neq 0$ ist eine Einheit.
+$\Leftrightarrow\{0\}$ und der Ring sind die einzigen
+Ideale. Für $I\unlhd R,I\neq R$ gilt die
+Idealkorrespondenz:\\
+Ideale $J\subseteq R\overset{1:1}\leftrightarrow$ Ideale in
+$R/I$. mit $J\mapsto J/I$. Also Ideale $J\unlhd R$ mit
+$I\subseteq J$ entsprechen (bijektiv) den Idealen in $R/I$.
+$R/I$ ist ein Körper $\Leftrightarrow\{\overline{0}\}$ und
+$R/I$ sind die einzigen Ideale $\Leftrightarrow$ es gibt
+nur genau zwei Ideale $J\unlhd R$ mit $I\subseteq J$.
+I selbst und $R$.\\
+Es gilt also $I$ Primideal $\Leftrightarrow R/I$
+Integritätsbereich.\\
+$I$ Maximales Ideal $\Leftrightarrow R/I$ Körper.\\
+Es sind also maximale Ideale auch immer Primideale.
+
+\color{purple}
+$R=\Z,p\Z$ ($p$ Primzahl), zz $p\Z$ ist maximales
+Ideal.
+\begin{equation*}
+    p\Z\subseteq J\subseteq\Z,\Z\text{ HIR }
+    \Rightarrow\underset{n}\exists J=n\Z
+\end{equation*}
+ebenso ist
+\begin{equation*}
+    p\Z\subseteq n\Z\Rightarrow n|p
+    \Rightarrow
+\end{equation*}
+\begin{enumerate}[1.]
+    \item
+        $n=\pm 1\Rightarrow n\Z=\Z$
+    \item
+        $n=\pm p\Rightarrow n\Z=p\Z$
+\end{enumerate}
+$\Rightarrow p\Z$ ist ein maximales Ideal.
+
+\color{blue}
+Sei $R$ ein HIR, $\langle u\rangle$ maximal
+$\overset{1.19}\Leftrightarrow u$ unzerlegbar.
+Sei $u$ unzerlegbar $\overset{1.19}\Rightarrow
+\langle u\rangle$ Primideal $\Rightarrow u$ ist
+prim. Also $u$ unzerlegbar $\Rightarrow u$ ist prim.
+\color{black}
+\begin{korollar}
+    Sei $R$ ein HIR und $p\in R$. Dann ist $p$ prim
+    $\Leftrightarrow p$ ist unzerlegbar. Primideale $\neq 0$
+    sin maximale Ideale.
+\end{korollar}
+\begin{korollar}
+    Sei $R$ ein faktorieller Ring und $a\in R\setminus\{0\}$.
+    Dann gibt es nur endlich viele verschiedene Hauptideale
+    $\langle b\rangle\supseteq\langle a\rangle$
+\end{korollar}
+Beweis:
+\begin{itemize}
+    \item
+        Falls $a\in\R^*:\langle a\rangle=R\Rightarrow
+        \langle b\rangle=R$.
+    \item
+        Falls $a\notin R^*\Rightarrow a=u_1\hdots u_n$ mit
+        $u_i$ den Primteilern von $a$. Die Zerlegung ist
+        eindeutig für $a$ und $b$.
+        \begin{equation*}
+            \langle a\rangle\subset\langle b\rangle
+            \Rightarrow a\in\langle b\rangle\Rightarrow b|a
+        \end{equation*}
+        Aufgrund der Eindeutigkeit der Primfaktorjerlegung
+        $\Rightarrow$ Die Zerlegung von $b$ besteht
+        aus Faktoren von $a$.
+        Es gibt also nur endlich viele $b$.
+\end{itemize}
+\begin{thm}
+    Sei $R$ ein Integritätsbereich. $R$ ist faktoriell
+    $\Leftrightarrow$ Jedes unzerlegbare Element ist prim
+    und jede aufsteigende Kette von Hauptidealen
+    $I_1\subseteq I_2\subseteq\hdots\subseteq I_n\subseteq
+    I_{n+1}(n\in\N)$ wird stationär, d.h.
+    $\underset{N_0}\exists\underset{N>N_0}\forall I_N=
+    I_{N_0}$
+\end{thm}
+Beweis:
+\begin{itemize}
+    \item ``$\Rightarrow$''\\
+        Die erste Aussage ist in 1.11(2) enthalten,
+        die zweite Aussage folgt aus 1.23
+    \item ``$\Leftarrow$''\\
+        Unzerlegbar = prim gilt nach Vorraussetzung.
+        Für 1.11(2) ist noch z.z. Sei $a\in R,a\neq 0,
+        a\notin R^*$, dann ist $a$ ein Produkt von endlich
+        vielen unzerlegbaren Elementen. Angenommen, es gibt
+        $a$ ohne eine solche Zerlegung. Sei
+        \begin{equation*}
+            H:=\{\langle a\rangle\text{ Hauptideale}|a\neq 0,
+            a\notin R^*,a\text{ hat keine Zerlegung}\}
+        \end{equation*}
+        Nach Annahme gilt $H\neq\emptyset$. $H$ enthält
+        ein bezüglich Inklusion maximales Element.
+        Falls nicht:
+        \begin{equation*}
+            \underset{\langle a_0\rangle\in H}\forall
+            \underset{\langle a_1\rangle\in H}\exists
+            \langle a_0\rangle\subsetneq\langle a_1\rangle
+        \end{equation*}
+        $\Rightarrow$ es existiert eine Aufsteigende Kette
+        $\langle a_0\rangle\subsetneq\langle a_1\rangle
+        \subsetneq\hdots$, die nicht stationär wird,
+        Widerspruch. Also ist die Behauptung wahr.
+
+        Sei nun $\langle a\rangle\in H$ ein maximales
+        Element $\Rightarrow a\neq 0$ und $a\notin R^*$.
+        $a$ nicht unzerlegbar.
+        $\Rightarrow a=b\cdot c$ mit $b,c\in R\setminus R^*,
+        \langle a\rangle\subsetneq\langle b\rangle,
+        \langle a\rangle\subsetneq\langle c\rangle$
+        Da $\langle a\rangle$ maximal in $H\Rightarrow
+        \langle b\rangle\notin H,\langle c\rangle\notin H
+        \Rightarrow b,c$ haben Zerlegungen $b=u_1\hdots u_n,
+        c=v_1\hdots v_l\Rightarrow a=u_1\hdots u_nv_1\hdots
+        v_n\Rightarrow a$ hat eine Zerlegung, Widerspruch.
+\end{itemize}
+\begin{proposition}
+    Sei $R$ ein kommutativer Ring. Dann sind die folgenden
+    Bedingungen Äquivalent
+    \begin{enumerate}[(a)]
+        \item
+            Jede aufsteigende Kette $I_0\subset I_1\hdots$
+            von aufsteigenden Idealen in $R$ wird stationär.
+        \item
+            In jeder nicht leeren Menge von Idealen in $R$
+            gibt es ein bezüglich Inklusion maximales
+            Element.
+        \item
+            Jedes Ideal in $R$ ist endlich erzeugt, d.h.
+            von der Form $\langle a_1,\hdots,a_n\rangle
+            =Ra_1+\hdots+Ra_n$ mit $a_i\in R$.
+    \end{enumerate}
+    Wenn die Aussagen erfüllt sind, dann ist $R$ ein
+    \textbf{noetherscher Ring}.
+\end{proposition}
+Beweis:
+\begin{itemize}
+    \item $(a)\Rightarrow (b)$:\\
+        Sei $M$ eine nicht leere Menge von Idealen. Falls es
+        kein bzgl. inklusion maximales Element gibt,
+        existiert eine nicht stationär werdende aufsteigende
+        Kette $I_1\subsetneq I_2\subsetneq\hdots\subsetneq
+        I_n\subsetneq I_{n+1}\subsetneq\hdots$.
+    \item $(b)\Rightarrow (c)$:\\
+        Sei $I$ Ideal,
+        \begin{equation*}
+            M=\{J\unlhd R|J\subseteq I, J
+            \text{ endlich erzeugt}\}
+        \end{equation*}
+        (Hauptideale sind von einem Element erzeugt)
+        $\Rightarrow M\neq\emptyset\Rightarrow$ es existiert
+        maximales Element
+        \begin{itemize}
+            \item
+                Fall $J=I$
+            \item
+                Fall $J\neq I\Rightarrow J\subsetneq I
+                \Rightarrow\underset{x\in I}\exists
+                x\notin J, J\in M$ endlich erzeugt
+                \begin{equation*}
+                    J\subsetneq (J+Rx)\subset I
+                \end{equation*}
+                Widerspruch zu $J$ maximal.
+        \end{itemize}
+        Nur der Fall $J=I$ kann eintreten.
+\end{itemize}
 \end{document}
