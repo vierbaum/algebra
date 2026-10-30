@@ -926,6 +926,55 @@ Sei $K$ ein Körper und
         Bestimmen Sie alle Primideale und alle maximalen Ideale von $R$.\\
         \color{black}
 \end{enumerate}
+\subsection{}
+\color{blue}
+Sei $\varphi:R\to S$ ein Ringhomomorphismus.
+\color{black}
+\begin{enumerate}[(a)]
+    \item
+        \color{blue}
+        Zeigen Sie: Für jedes Ideal $J\subseteq S$ ist $\varphi^{-1}(J)$ ein Ideal von $R$.\\
+        \color{black}
+    \item
+        \color{blue}
+        Sei $\varphi$ surjektiv. Zeigen Sie, dass $\varphi(I)$ für jedes Ideal $I\subseteq R$ ein Ideal von $S$ ist.\\
+        \color{black}
+        Für ein Ideal $I$ in $R$ gilt:
+        $\varphi(0_R)=0_S\Rightarrow 0\in\varphi(I)$
+        \begin{itemize}
+            \item
+                Ist $I=\{0\}\Rightarrow\varphi(I)=\{0\}$ ist ein Ideal.
+            \item
+                Ist $I\neq\{0\}$, dann existiert ein $a\in I$ mit $a\neq 0$, dass $\varphi(I)$ ein Ideal ist,
+                müssen zusätzlich folgende Eigenschaften gelten:
+                \begin{itemize}
+                    \item Abgeschlossen unter $+$:\\
+                        Seien $x,y\in\varphi(I)$, dann gilt
+                        \begin{align*}
+                            \underset{x',y'\in I}\exists\varphi(x')=x\land\varphi(y')=y
+                            \Rightarrow x+y=\vaphi(x')+\varphi(y')=\varphi(x+y)
+                        \end{align*}
+                        Da $I$ unter $+$ abgeschlossen ist ist $x+y$ in $I$ und $\varphi(x+y)\in\varphi(I)$
+                    \item $\underset{x\in\varphi(I)}-x\in\varphi(I)$:
+                        \begin{align*}
+                            \underset{x'\in I}\exists\varphi(x')&=x\\
+                            \Rightarrow0=\varphi(0)&=\varphi(x'+(-x'))=\varphi(x')+\varphi(-x')
+                            =x+\varphi(-x')\Rightarrow\varphi(-x')=-x
+                        \end{align*}
+                    \item $\underset{x\in\varphi(I)}\forall\underset{s\in S}\forall s\cdot x\in I$:\\
+                        \begin{align*}
+                            \underset{x',\in I,s'\in R}\exists\varphi(x')=x\land\varphi(s')=s
+                            \Rightarrow s\cdot x=\varphi(s')\cdot\varphi(x')=\varphi(\underbrace{s'\cdot x'}_{\in I})
+                            \in\varphi(I)
+                        \end{align*}
+                \end{itemize}
+        \end{itemize}
+    \item
+        \color{blue}
+        Zeigen Sie anhand der Inklusion $Z\hookrightarrow Q$, dass die Voraussetzung der Surjektivität in
+        (b) nicht weggelassen werden kann.\\
+        \color{black}
+\end{enumerate}
 \section{Vortragsübungen}
 \paragraph{20.10.26}
 \begin{enumerate}[1.]
