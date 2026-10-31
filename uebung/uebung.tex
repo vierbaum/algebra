@@ -975,6 +975,37 @@ Sei $\varphi:R\to S$ ein Ringhomomorphismus.
         (b) nicht weggelassen werden kann.\\
         \color{black}
 \end{enumerate}
+\subsection{}
+\color{blue}
+Sei $R$ ein Integritätsbereich, der nur endlich viele verschiedene Hauptideale besitzt. Bezeichne
+$H$ die Menge aller Hauptideale von $R$.
+\color{black}
+\begin{enumerate}[(a)]
+    \item
+        \color{blue}
+        Sei $a\in R\setminus\{0\}$. Zeigen Sie, dass
+        \begin{equation*}
+        \Phi_a : \mathcal H\to\mathcal H, I\mapsto aI,
+        \end{equation*}
+        eine wohldefinierte, injektive Abbildung ist. Dabei ist $a_I:=\{ax|x\in I\}$.\\
+        \color{black}
+        Wir nehmen an, es existieren $X,Y\in H$ mit $X\neq Y,\Phi_a(X)=\Phi_a(Y)$
+        Dann gilt
+        \begin{align*}
+            \Phi_a(X)&=\Phi_a(Y)\\
+            aX&=aY\\
+            \{ax|x\in X\}&=\{ay|y\in Y\}
+        \end{align*}
+        Da $X\neq Y$ muss es elemente in $x\in X,y\in Y$ geben mit $x\neq y$ aber $ax=ay$.
+        Da wir in einem Integritätsbereich sind ist $ax=ay\land a\neq 0\Rightarrow x=y$.
+        Dies ist ein Widerspruch zur Annahme, es gilt $\Phi_a(X)=\Phi_a(Y)\Rightarrow X=Y\Rightarrow\Phi_a$
+        ist injektiv.
+    \item
+        \color{blue}
+        Folgern Sie, dass jedes von null verschiedene Element von $R$ eine Einheit ist und
+        somit $R$ ein Körper ist. Erklären Sie, warum 2(c) dieser Aussage nicht widerspricht.\\
+        \color{black}
+\end{enumerate}
 \section{Vortragsübungen}
 \paragraph{20.10.26}
 \begin{enumerate}[1.]
