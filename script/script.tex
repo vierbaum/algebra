@@ -1073,5 +1073,138 @@ Beweis:
                 Widerspruch zu $J$ maximal.
         \end{itemize}
         Nur der Fall $J=I$ kann eintreten.
+    \item $(c)\Rightarrow (a)$:\\
+        Sei $I_0\subseteq I_1\subseteq\hdots$ eine
+        aufsteigende Kette von Idealen.
+        $J:=\underset{n\in\N_0}\bigcup I_n$ ist ein
+        Ideal: $a,b\in J\Rightarrow\underset{n_1}\exists
+        a\in I_{n_1},\underset{n_2}\exists b\in I_{n_2},
+        n_3:=\max\{n_1,n_2\}\Rightarrow a,b\in I_{n_3}$
+        Ideal $\Rightarrow a+b\in I_{n_3}
+        \Rightarrow$ abgeschlossen unter Addition.\\
+        (c)$\Rightarrow J$ ist endlich erzeugt $\Rightarrow
+        \underset{a_1,\hdots,a_n}\exists J=\langle
+        a_1,\hdots,a_n\rangle=(a_1,\hdots,a_m),
+        a_1\in I_{n_1},\hdots,a_m\in I_{n_m},N:=\max
+        \{a_1,\hdots,a_{n_m}\}\Rightarrow I_{n_1}\subset
+        \hdots\subset I_{n_N}\subset I_n\Rightarrow
+        a_1\hdots,a_m\in I_N\Rightarrow J=I_N\Rightarrow$
+        Die kette ist stationär.
 \end{itemize}
+\begin{korollar}
+    Sei $R$ ein Hauptidealring. Dann ist $R$ faktoriell und
+    noethersch. Insbesondere sind euklidische Ringe
+    faktoriell
+\end{korollar}
+Beweis: Sei $R$ ein HIR. $\Rightarrow$ Alle Ideale sind
+Hauptideale, also endlich erzeugt. $\overset{1.25c}
+\Rightarrow R$ ist noethersch. und erfüllt 1.25.\\
+Nach 1.22 gilt unzerlegbar = prim in $R$.\\
+Nach 1.24 gilt $R$ ist faktoriell.
+
+\color{purple}
+Unzerlegbar und prim muss nicht dasselbe sein: die
+Produktzerlegung in unzerlegbare Elemente muss nicht
+eindeutig sein. $R=\Z[\sqrt{-5}]=\{a+b\sqrt{-5}|a,b\in\Z\}$.
+$R$ ist ein Teilring von $\C:$
+\begin{equation*}
+    (a+b\sqrt{5})(c+d\sqrt{-5})=(ac-5bd)+(ad+bc)\sqrt{-5}
+\end{equation*}
+Norm $N(a+b\sqrt{5})=a^2+5b^2\in\N_0$.
+$N$ ist multiplikativ $N(z_1z_2)=N(z_1)N(z_2)$
+
+Falls $z:=a+b\sqrt{-5}$ invertierbar ist:
+\begin{equation*}
+    1=N(1)=N(zz^{-1})=\underbrace{N(z)N(z^{-1})}_{\in\N_0}
+    \Rightarrow N(z)=1\Rightarrow b=0,a=\pm 1\Rightarrow
+    R^*\{-1,1\}
+\end{equation*}
+Weiter gilt
+\begin{equation*}
+    N(z)=a^2+5b^2\equiv a^2\mod 5
+\end{equation*}
+also $\overline{N(z)}=\overline{a^2}$ in $\Z/5\Z\Rightarrow$
+Nur $\overline{0},\overline{1},\overline{4}$ sind
+Quadratzahlen.
+\begin{align*}
+    N(3)&=9\\
+    N(2\pm\sqrt{-5})=4+5&=9
+\end{align*}
+Wir finden primfaktoren der Norm in $\Z$.
+Sei $u=x\cdot y\in R,N(u)=N(x)N(y)$ für $u=3$ ist
+$N(u)=9=N(x)N(y)$ falls $N(x)=1\Rightarrow x$ ist Einheit
+$x=\pm 1,y=\pm u$, falls $N(x)=3=N(y)$, aber
+$\underset{a,b\in\Z}\nexists 3=a^2+5b^2\Rightarrow 3$ ist
+unzerlegbar.
+Dieselbe Argumentation gilt für $u=2\pm\sqrt{-5}\Rightarrow$
+unzerlegbar. $3,2\pm\sqrt{-5}$ sind nicht zueinander
+assoziiert.
+\begin{equation*}
+    (2+\sqrt{-5})(2-\sqrt{-5})=9=3\cdot 3
+\end{equation*}
+Sind zwei verschiedene Zerlegung von $9$ in unzerlegbare
+Elemente. Also ist die Zerlegung von $9$ in ein Produkt
+unzerlegbarer Elemente nicht eindeutig.
+
+Falls $3$ ein Primelement in $R$ ist, muss $3|2+\sqrt{-5}$
+oder $3|2-\sqrt{-5}$. Dies gilt nicht $\Rightarrow$
+prim $\neq$ unzerlegbar.
+\color{black}
+\section{Gruppen}
+\begin{defi}
+    Eine \textbf{Gruppe} ist ein Tripel $(G,*,e)$, bestehend
+    aus einer Menge $G$, einer Abbildung
+    $*:G\times G\rightarrow G$ und einem asugezeichneten
+    Element $e=1_G$, sodass gilt
+    \begin{itemize}
+        \item $\underset{g_1,g_2,g_3\in G}\forall
+            (g_1*g_2)*g_3=g_1*(g_2*g_3)$
+        \item $\underset{g\in G}\forall g*e=1=e*g$
+        \item $\underset{g\in G}\forall\underset{g^{-1}\in G}
+            \exists g*g^{-1}=e=g^{-1}*g$
+    \end{itemize}
+    $G$ ist eine \textbf{endliche Gruppe}, wenn die Menge
+    $G$ endlich ist.\\
+    $G$ ist eine \textbf{abelsche Gruppe}, wenn $*$
+    kommutativ ist.
+\end{defi}
+\color{purple}
+$R$ Ring, $(R,+,0)$ abelsche Gruppe, $(R,\cdot, 1)$ keine
+Gruppe, da $0^{-1}$ nicht existiert. Ist $R$ Körper,
+so ist $(R\setminus\{0\},\cdot, 1_K)$ eine Gruppe.
+Ist $V$ ein Vektorraum, so ist $(V,+,0_V)$ eine abelsche
+Gruppe. Für $G=\{e\}$ ist $(G,\cdot:(e,e)\mapsto e, e)$
+eine abelsche Gruppe.
+\color{black}
+\begin{defi}
+    Seien $G,H$ Gruppen. Ein \textbf{Gruppenhomomorphismus}
+    $\varphi:G\rightarrow H$ ist eine Abbildung, für die
+    gilt
+    \begin{itemize}
+        \item $\underset{g_1,g_2\in G}\forall
+            \varphi(g_1*_G g_2)=\varphi(g_1)*_H\varphi(g_2)$
+    \end{itemize}
+    Wenn $\varphi$ zusätzlich bijektiv ist, ist es ein
+    \textbf{Gruppenisomorphismus}. Zewi Gruppen $G_1,G,2$
+    sind isomorph $\Leftrightarrow$ es existiert ein
+    Gruppenisomorphismus $\varphi:G_1\rightarrow G_2$.
+    Wir schreiben $G_1\cong G_2$ oder $\varphi:G_1
+    \overset{\sim}\rightarrow G_2$.
+
+    Eine Gruppe $H$ ist eine \textbf{Untergruppe} von $G$,
+    wenn es einen bijektiven Gruppenhomomorphismus
+    $i:H\to G$. Wir schreiben $H<G$
+    (Es ist nicht nötig, dass $H\subseteq G$, Das Bild
+    $i(H)\subseteq G$)
+\end{defi}
+\color{blue}
+Es folgt $\varphi(e_G)=e_H$\\
+\color{black}
+\begin{thm}[Satz con Cayley]
+    Jede endliche Gruppe ist Untergruppe einer Symmetrischen
+    Gruppe. Jede Gruppe ist Untergruppe einer Gruppe
+    $\bij(X)$ für eine Menge $X$
+\end{thm}
+\color{blue}
+Deshalb kann man sagen, dass Gruppen Symmetrien beschreiben.
 \end{document}
