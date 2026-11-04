@@ -1059,6 +1059,71 @@ Sei $R = \Z/36\Z$.
         aller Primideale von $R$ bilden.
         \color{black}
 \end{enumerate}
+\subsection{}
+\color{blue}
+Sei $R$ ein kommutativer Ring.
+\color{black}
+\begin{enumerate}[(a)]
+    \item
+        \color{blue}
+        Zeigen Sie: Ist $R$ ein Integritätsbereich, so ist $X$ in $R[X]$ unzerlegbar.\\
+        \color{purple}
+        Ein Element $u\in R$ heißt \textbf{Unzerlegbar}, falls $u\neq 0$
+        und $u\notin R^*$ und
+        \begin{equation*}
+            \underset{a,b\in R}\forall u=a\cdot b
+            \Rightarrow a\in R^*\lor b\in R^*
+        \end{equation*}
+        \color{black}
+        Es ist $X\neq 0_{R[X]}$, wir nehmen an, $X\in R^*$, dann existiert
+        ein $X^{-1}\in R[X]$ mit
+        \begin{align*}
+            XX^{-1}&=1\\
+            X(a_0+a_1x+\hdots+a_nx^n)&=1 (a_i\in R, 0\leq i\leq n)\\
+            a_0x+a_1x^2+\hdots+a_nx^{n+1}&=1\\
+            \Rightarrow a_i&=0 (0\leq i\leq n)\\
+            \Rightarrow X^{-1}&=0,XX^{-1}=0
+        \end{align*}
+        Dies ist ein Widerspruch zur Annahme $\Rightarrow X\notin R^*$
+
+        Wir nehmen an $f$ sei nicht unzerlegbar, dann gibt es\\
+        $f:=a_0+a_1+\hdots+a_nx^n,g:=b_0+b_1x+\hdots+b_lx^l$ mit $f,g\notin R^*$ und $f\neq 0,g\neq 0$.
+        Wir nehmen an, für ein $i\geq 2$ ist $a_i\geq 1$, dann ist $\deg(f\cdot g)=\deg(f)+\deg(g)=i+\deg(g)\geq i>\deg(X)$.
+        Demnach ist $a_i=0(i\geq 2)$, wie auch $b_j=0(j\geq 2)$.\\
+        Nehmen wir nun weiter an, es sei $a_1\geq 1,b_1\geq 1$, dann ist
+        $\deg(f\cdot g)=1+1=2>\deg(X)$. Demnach ist entweder $a_1=0$ oder $b_1=0$\\
+        Wir nehmen OBDA an, $b_1=0$.
+        Dann ist $f=a_0+a_1X,g=b_0$, also
+        \begin{align*}
+            X=f\cdot g&=\underbrace{a_0b_0}_{=0}+b_0a_1X\\
+            \Rightarrow 1&=b_0a_1\\
+            \Rightarrow a_1=(b_0)^{-1}=g^{-1}\\
+            \Rightarrow g^{-1}\in R*
+        \end{align*}
+        Dies ist ein Widerspruch zur Annahme $\Rightarrow X$ ist unzerlegbar in $R[X]$.
+    \item
+        \color{blue}
+        Zeigen Sie: Ist $R[X]$ ein Hauptidealring, so ist $R$ ein Körper.
+        \color{black}
+    \item
+        \color{blue}
+        Folgern Sie, dass die folgenden Aussagen äquivalent sind:
+        \color{black}
+        \begin{enumerate}[(i)]
+            \item
+                \color{blue}
+                $R$ ist ein Körper;
+                \color{black}
+            \item
+                \color{blue}
+                $R[X]$ ist euklidisch;
+                \color{black}
+            \item
+                \color{blue}
+                $R[X]$ ist ein Hauptidealring.
+                \color{black}
+        \end{enumerate}
+\end{enumerate}
 \section{Vortragsübungen}
 \paragraph{20.10.26}
 \begin{enumerate}[1.]
