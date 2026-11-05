@@ -1207,4 +1207,170 @@ Es folgt $\varphi(e_G)=e_H$\\
 \end{thm}
 \color{blue}
 Deshalb kann man sagen, dass Gruppen Symmetrien beschreiben.
+Ist $|G|<\infty\Rightarrow G<\sum_{n}$\\
+\color{black}
+Beweis:
+Sei $X:=G$,
+\begin{equation*}
+    l_g:G\to G;h\mapsto g*h
+\end{equation*}
+Wir zeigen: $l_g$ ist eine bijektive Abbildung von $G$
+nach $G$ (also $l_g\in\bij(X)$).
+$l_g$ hat umkehrfunktion $l_{g^{-1}}$. Es ist
+\begin{align*}
+    l_{g^{-1}}(l_g(h))&=
+    l_{g^{-1}}(g*h)\\
+    &=g^{-1}(g*h)\\
+    &=(g^{-1}*g)*h\\
+    &=e*h\\
+    &=h\\
+    &=(g*g^{-1})*h\\
+    &=l_g(l_{g^{-1}}(h))
+\end{align*}
+Also ist $l_g$ bijektiv.
+
+Wir suchen nun einen Gruppenhomomorphismus $G\overset{i}\to
+\big(X)$. Definiere $i:g\mapsto l_g(g\in G)$
+$i$ ist injektiv, seien $g_1,g_2\in G,$ zz $l_{g_1}=l_{g_2}
+\Rightarrow g_1=g_2$.\\
+Sei $\underset{h\in G}\forall l_{g_1}(h)=l_{g_2}(h)$.
+Wähle $h=e$, also
+\begin{align*}
+    l_{g_1}(e)&=l_{g_2}(e)\\
+    \Rightarrow g_1*e&=g_2*e\\
+    \Rightarrow g_1&=g_2
+\end{align*}
+$\Rightarrow i$ ist injektiv
+
+Nun zeigen wir $i$ ist ein Gruppenhomomorphismus:
+Gruppenstruktur auf $\bij(X)$ ist die
+Hintereinanderausführung von Abbildungen
+Sei $g_1,g_2\in G,$ vergleiche $i(g_1*g_2)=l_{g_1*g_2}$
+mit dem Produkt von $l_{g_1}$ und $l_{g_2}$ in $\bij(X)$.
+Sei $h\in G$
+\begin{align*}
+    l_{g_1*g_2}&=(g_1*g_2)*h\\
+    &=g_1*(g_2*g)\\
+    &=g_1*l_{g_2}(h)\\
+    &=l_{g_1}(l_{g_2}(h))\\
+    &=(l_{g_1}\circ l_{g_2})(h)\\
+    &=l_{g_1*g_2}(h)\\
+\end{align*}
+$\Rightarrow i:G\to\bij(X)$
+\begin{defi}
+    Eine Gruppe $G$ ist \textbf{zyklisch}: $\Leftrightarrow
+    \underset{g\in G}\exists G=\{g^n|n\in\Z\}$ mit
+    \begin{equation*}
+        g^n=
+        \begin{cases}
+            g*g*g*\hdots&n\text{ Faktoren},n>0\\
+            e&n=0\\
+            g^{-1}*g^{-1}*\hdots&n\text{ Faktoren},n<0\\
+        \end{cases}
+    \end{equation*}
+\end{defi}
+\color{purple}
+\begin{itemize}
+    \item $(\Z,+,0)$
+    \item $(\Z/n\Z,+,\overline{0})$
+    \item $G$ beliebige Gruppe, $g\in G, H:=\{g^n\}$ ist
+        eine Zyklische Gruppe und $H<G$
+\end{itemize}
+\color{black}
+
+Die \textbf{Ordnung} $\ord(G)$ ist die Elementezahl $|G|$
+der Gruppe $G,\ord(G)\in\N_0\cup\{\infty\}$
+\begin{proposition}
+    Zwei zyklische Gruppen $G_1,G_2$ sind isomorph
+    $\Leftrightarrow\ord(G_1)=\ord(G_2)$
+\end{proposition}
+\color{blue}
+Bis auf ismorphie gibt es genau eine Zyklische Gruppe
+zu jeder Ordnung.
+\color{black}
+
+Beweis:
+$G=\langle g\rangle$ zyklisch $=\{g^n|n\in\Z\}$
+\begin{itemize}
+    \item $n\neq m\Rightarrow g^n\neq g^m$
+        zz $G\cong\Z$ Sei $\varphi:\Z\to G,n\mapsto g^n$
+        Wir zeigen $\varphi$ inj., surj.,
+        Gruppenhomomorphismus
+        \begin{align*}
+            \varphi(n_1+n_2)=g^{n_1+n_2}
+            =g^{n_1}*g^{n_2}=\varphi(n_1)*\varphi(n_2)
+        \end{align*}
+        ($+_G=*_\Z,*_G=+_\Z$)\\
+        $\varphi$ surjektiv: $g^n\in G\Rightarrow
+        g^n=\varphi(n)$\\
+        $\varphi$ injektiv: Sei
+        \begin{align*}
+            \varphi(n_1)&=\varphi(n_2)\\
+            g^{n_1}&=g^{n_2}
+        \end{align*}
+        Falls $n_1\neq n_2\Rightarrow g^{n_1}\neq g^{n_2}$
+        Also ist $n_1=n_2$
+        $\Rightarrow G\cong\Z$
+    \item
+        Es ist $\underset{m\neq l}\exists g^m=g^l$
+        Wir wollen $G\cong\Z/n\Z$ (für ein $n$). Sei
+        \begin{align*}
+            g^m=g^l,m>l\Rightarrow g^{m-l}=g^o=e
+            \Rightarrow\underset{n}g^n=e
+        \end{align*}
+        Wähle $n$ minimal, wir zeigen $G\cong\Z/n\Z$
+        sei $\varphi:\Z/n\Z\to G,\overline{m}\mapsto g^m$.
+        $\varphi$ ist wohldefiniert: $\overline{m_1}=
+        \overline{m_2}$,zz $g^{m_1}=g^{m_2}$
+        also
+        \begin{align*}
+            m_1\equiv m_2\mod n,m_1-m_2\in\Z\\
+            g^{m_1}=g^{m_1-m_2}*g^{m_2}
+            =g^{k\cdot n}*g^{m_2}
+            =\left(
+            \underbrace{g^n}_{=e}
+            \right)^k*g^{m_2}=g^{m_2}
+            \Rightarrow g^{m_1}=g^{m_2}
+        \end{align*}
+        $\Rightarrow\varphi$ ist wohldefiniert.\\
+        $\varphi$ ist Gruppenhomomorphismus:
+        $\varphi(m_1+m_2)=g^{m_1+m_2}=g^{m_1}*g^{m_2}=
+        \varphi(m_1)*\varphi(m_2)$\\
+        $\varphi$ ist surjektiv: $\varphi(k)=g^k
+        (k=qn+r\Rightarrow\overline{k}=\overline{r})$
+        $\varphi$ ist injektiv: Sei $\overline{n_1}=
+        \overline{n_2}\in\Z/n\Z,\varphi(n_1)=\varphi(n_2)$
+        zz $\overline{n_1}=\overline{n_2}$
+        \begin{align*}
+            \varphi(n_1)&=\varphi(n_2)\\
+            g^{n_1}&=g^{n_2}&(\text{OBDA }n_1>n_2)\\
+            g^{q_1n+r_1}&=g^{q_2n+r_2}\\
+            g^{r_1}&=g^{r_2}\\
+            \Rightarrow g^{r_1-r_2}&=e
+        \end{align*}
+        Dies ist ein Widerspruch zur Minimalität von $n$.
+        Also ist $\varphi$ injektiv, ein
+        Gruppenisomorphismusm $\Z/n\Z\overset{\sim}\to G$
+\end{itemize}
+
+$G=\Z$: Ideale in Ringen sind (mit Addition) untergruppen
+von $\Z:n\Z$ gibt es noch weitere?
+Sei $H<G$
+\begin{itemize}
+    \item ist $H=\{0\}=0\Z$
+    \item ist $H\neq\{0\}\Rightarrow\underset{n\in\N}
+        \exists n\in H\Rightarrow H\cap\N\neq\emptyset
+        \Rightarrow\underset{n}n=\min(H\cap\N)
+        \Rightarrow n+n\in H\Rightarrow n\Z\subseteq H$\\
+        Sei $H\neq n\Z\Rightarrow\underset{k\in H}\exists
+        k\notin n\Z$ mit $k=\min(H\setminus n\Z)$,
+        so ist $k=qn+r(0\leq r\leq n-1)$
+        \begin{itemize}
+            \item $r=0\Rightarrow k=qn\in n\Z$
+            \item $r\neq 0,r\notin n\Z$, aber
+            $r=k-qn\in H$, Widerspruch zu $n$ minimal
+        \end{itemize}
+\end{itemize}
+$\Rightarrow$ Es gibt über die Ideale hinaus keine
+Untergruppen
 \end{document}
