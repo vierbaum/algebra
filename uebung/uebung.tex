@@ -1183,6 +1183,60 @@ Sei $R=\Z[\sqrt{-3}]$.
         Folgern Sie, dass $\Z[\sqrt{-3}]$ noethersch ist.
         \color{black}
 \end{enumerate}
+\subsection{}
+\color{blue}
+Beweisen oder widerlegen Sie die folgenden Aussagen.
+\color{black}
+\begin{enumerate}[(a)]
+    \item
+        \color{blue}
+        Sind $P$ und $Q$ Primideale eines Rings $R$, so ist auch $P\cap Q$ ein Primideal von $R$.
+        \color{black}
+    \item
+        \color{blue}
+        Ist $\varphi: R\to S$ ein Ringhomomorphismus und $m$ ein maximales Ideal von $S$, so ist $\varphi^{-1}(m)$
+        ein maximales Ideal von $R$.\\
+        \color{black}
+        Wir wählen $R=\Z,S=\Q$ mit $\varphi:x\mapsto x$.
+        Dann ist $I:=\{0\}$ ein maximales Ideal in $\Q$, da für
+        ein Ideal $I'\neq I\Rightarrow\underset{x\in I}x\neq 0\Rightarrow x^{-1}\in I'
+        \Rightarrow xx^{-1}=1\in I'\Rightarrow I'=\Q$.\\
+        Aber $\varphi^{-1}(I)=\{0\}\subsetneq 2\Z\subsetneq\Z$ ist nicht maximal in $\Z$
+        (wie gezeigt z.b. $2\Z$)
+    \item
+        \color{blue}
+        Der Unterring $\Q+X\R[X]=\{f\in\R[X]|f(0)\in\Q\}\subseteq\R[X]$ ist nicht noethersch.
+        \color{black}
+    \item
+        \color{blue}
+        Ist $R$ ein faktorieller Ring und $p\in R$ irreduzibel, so ist $(p)$ ein maximales Ideal von $R$.
+        \color{black}
+    \item
+        \color{blue}
+        Ist $R$ ein noetherscher Integritätsbereich, in dem jedes von null verschiedene Primideal maximal ist,
+        so ist $R$ faktoriell.\\
+        \color{black}
+        Wir wollen zeigen, dass $R$ ein HIR ist.
+        Wir nehmen an, es gibt ein Ideal $I$ von $R$, das nicht in der Form $Ra(a\in R)$ dargestellt werden kann und
+        kein Primideal ist. Dann gilt
+        \begin{align*}
+            \underset{b_0,\hdots,b_i\in R}\exists I&=\sum_i Rb_i
+            \Rightarrow\underset{a_i}\forall Ra_i\subseteq I
+        \end{align*}
+        Da alle Primideale maximal sind müssen $a_i$ nicht prim sein.
+        Es bleiben also folgende Optionen:
+        \begin{itemize}
+            \item
+                $a_i=0\Rightarrow I=\{0\}=R\cdot 0$ Widerspruch
+            \item
+                $a_i\in R^*\Rightarrow 1\in Ra_i\Rightarrow I=R$ Widerspruch
+        \end{itemize}
+    \item
+        \color{blue}
+        Ein kommutativer Ring $R$ besitzt genau ein maximales Ideal,
+        wenn und nur wenn die Menge der Nichteinheiten von $R$ ein Ideal von $R$ ist.
+        \color{black}
+\end{enumerate}
 \section{Vortragsübungen}
 \paragraph{20.10.26}
 \begin{enumerate}[1.]
