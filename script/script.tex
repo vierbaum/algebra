@@ -1373,4 +1373,63 @@ Sei $H<G$
 \end{itemize}
 $\Rightarrow$ Es gibt über die Ideale hinaus keine
 Untergruppen
+
+Sei $G=\Z/n\Z:=\{\overline{0},\hdots,\overline{n-1}\}$
+Erzeugendes element $\overline{1}=g,s\in\N_0:
+\{(g^s)^t|t\in\Z\}$ Untergruppe (mit $*$ als Addition)
+Es ist $\ord(H)|n$, denn $g^2,g^{2s},\hdots\in H\Rightarrow
+\ord(H)<\infty\Rightarrow\underset{a,b}\exists g^{as}=g^{bs}
+\Rightarrow g^{(a-b)s}=e\Rightarrow\underset{t>0}\exists
+g^{st}=e$ Wir wählen $d$ minimal mit $g^{ds}=e$. $d$
+wird Ordnung des Elements $g^{s}$ genannt.
+\begin{itemize}
+    \item ist $d=1\Rightarrow H=\{e\}$
+    \item ist $d>1\Rightarrow g^{ds}=e\Rightarrow^{(d-1)s}
+    =(g^s)^{-1}\Rightarrow\{g^s,g^{2s},\hdots,g^{(d-1)s},e\}$
+    Also $H<G$ mit $\ord(H)=d$.
+\end{itemize}
+Es ist $g^{ds}=e=g^n$ Nach Division mit Rest
+$\Rightarrow n|ds\Rightarrow \frac{n}{\ggT(n,s)}|d,
+(g^s)^{\frac{n}{\ggT(n,s)}}=g^{\frac{sn}{\ggT(n,s)}}=
+(g^n)^{\frac{s}{\ggT(n,s)}}=e\Rightarrow\ord(g^s)|\frac{n}
+{\ggT(n,s)}\Rightarrow d=\frac{n}{\ggT(n,s)}
+\Rightarrow d|n$.
+
+Sei $d$ ein beliebiger Teiler von $n$. Sei $s:=\frac{n}{d},
+H:=\{(g^s)^t\}\Rightarrow\ord(H)=d$. Also für jeden
+Teiler $d$ von $n$ gibt es eine Zyklische Untergruppe
+$H<G$ mit $\ord(H)=d$
+\begin{proposition}
+    Sei $G$ eine zyklische Gruppe
+    \begin{enumerate}[(a)]
+        \item Sei $G$ unendlich, also $G\cong\Z$. Die
+            Untergruppen $H\subseteq\Z$ sind genau die
+            $\Z\cdot n$ mit $n\in\N_0$. Alle Untergruppen
+            sind zyklische und mit ausnahme von $\{0\}$
+            alle zueinander isomorph.
+        \item Sei $|G|=n\in\N$, also $G\cong\Z/n\Z$. Die
+            Untergruppen $H\subseteq\Z/n\Z$ sind zyklisch.
+            Ihre Ordnungen sind genau die Teiler von $n$.
+            Zu jedem $d|n$ gibt es genau eine Untergruppe
+            $H_d\subseteq\Z/n\Z$ mit $\ord(H_d)=d,H_d$
+            wird von $\frac{n}{d}$ erzeugt.
+    \end{enumerate}
+\end{proposition}
+Jede Zyklische Gruppe ist abelsch. Ist jede Abelsche
+Gruppe Zyklisch?
+
+$G_1,G_2$ gruppen, $G_1\times G_2=\{(g_1,g_2)|g_1\in G_1,
+g_2\in G_2\}$ Kartesisches Produkt.
+$G_1\times G_2$ hat Multiplikation $(a,b)*(c,d):=
+(a*_{G_1}c,b*_{G_2}d)\in G_1\times G_2$.
+\begin{itemize}
+    \item $1_{G_1\times G_2}=(1_{G_1},1_{G_2})$
+    \item $G_1\times G_2$ ist das \textbf{äußere Produkt}
+        von $G_1,G_2$.
+    \item $G_1\to G_1\times G_2$ mit $a\mapsto (a,e_2)$
+        ist ein injektiver Gruppenhomomorphismus, also
+        $G_1<G_1\times G_2$
+\end{itemize}
+Falls $G_1,G_2$ Abelsch, dann ist $G_1\times G_2$ auch
+Abelsch.
 \end{document}
