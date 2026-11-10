@@ -1237,6 +1237,58 @@ Beweisen oder widerlegen Sie die folgenden Aussagen.
         wenn und nur wenn die Menge der Nichteinheiten von $R$ ein Ideal von $R$ ist.
         \color{black}
 \end{enumerate}
+\section{}
+\subsection{}
+\color{blue}
+Sei $R$ ein kommutativer Ring.
+\color{black}
+\begin{enumerate}[(a)]
+    \item
+        \color{blue}
+        Begründen Sie, dass $(R,+)$ und $(R^*,\cdot)$ abelsche Gruppen sind.
+        Warum ist $(R,\cdot)$ im Allgemeinen keine Gruppe?
+        \color{black}
+        \begin{itemize}
+            \item $G:=(R,+)$, dass $G$ eine Gruppe ist, müssen folgende Vorraussetzungen erfüllt werden:
+                \begin{itemize}
+                    \item $\underset{g_1,g_2,g_3\in G}\forall(g_1+g_2)+g_3=g_1+(g_2+g_3)$
+                        Dies geht aus der Definition der $+$-Verknüpfung des Ringes hervor.
+                    \item $e\in G$, hier ist $e=0_R$
+                    \item $\underset{g\in G}\forall\underset{g^{-1}\in G}g+g^{-1}=e=g^{-1}+g$
+                        Dies geht aus der Definition des Inversen der Addition des Ringes hervor.
+                \end{itemize}
+            \item $G:=(R^*,\cdot)=\{r\in R|r^{-1}\in R\}$, dass $G$ eine Gruppe ist,
+                müssen folgende Vorraussetzungen erfüllt werden:
+                \begin{itemize}
+                    \item $\underset{g_1,g_2,g_3\in G}\forall(g_1\cdot g_2)\cdot g_3=g_1\cdot (g_2\cdot g_3)$
+                        Dies geht aus der Definition der $\cdot$-Verknüpfung des Ringes hervor.
+                    \item $e\in G$, hier ist $e=1_R$
+                    \item $\underset{g\in G}\forall\underset{g^{-1}\in G}gg^{-1}=e=g^{-1}g$
+                        Wir wissen, dass jedes Element in ein inverses in $R$ hat,
+                        nun wir nehmen an, es gäbe ein Elmenet $g\in G$, wobei $g^{-1}\notin G\Rightarrow (g^{-1})^{-1}\notin
+                        R^*\Rightarrow (g^{-1})^{-1}\notin R\Rightarrow g\notin R$. Da $g\in G\Rightarrow g\in R$,
+                        dies ist ein Widerspruch zur Annahme $\Rightarrow$ Jedes ELement hat ein Inverses in $G$.
+                \end{itemize}
+            \item
+                Sei z.B. $R=\Z/3\Z$, so ist $0^{-1}\notin \Z/3\Z$, da kein Inverses zur Multiplikation gefordert wird.
+        \end{itemize}
+    \item
+        \color{blue}
+        Bestimmen Sie alle Elemente der Gruppen $(\Z/8\Z,+)$ und
+        $((\Z/8\Z)^*,\cdot)$ und jeweils deren Ordnung.
+        Sind diese Gruppen zyklisch?
+        \color{black}
+        \begin{itemize}
+            \item
+                $G:=(\Z/8\Z,+)=\{\overline{0},\overline{1},\overline{2},\overline{3},\overline{4},\overline{5},\overline{6},
+                \overline{7}\}\Rightarrow\ord(G)=8$, es ist $G=\{\overline{1}^n|n\in\N\}\Rightarrow G$ ist zyklisch.
+            \item
+                $G:=((\Z/8\Z)^*,\cdot)$ mit einer Multiplikationstabelle erhalten wir
+                $G=\{\overline{1},\overline{3},\overline{5},\overline{7}\}\Rightarrow \ord(G)=4$, da
+                $\overline{1}^2=\overline{1},\overline{3}^2=\overline{1},
+                \overline{5}^2=\overline{1},\overline{7}^2=\overline{1}$ ist $G$ nicht zyklisch
+        \end{itemize}
+\end{enumerate}
 \section{Vortragsübungen}
 \paragraph{20.10.26}
 \begin{enumerate}[1.]
