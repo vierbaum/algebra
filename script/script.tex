@@ -1432,4 +1432,107 @@ $G_1\times G_2$ hat Multiplikation $(a,b)*(c,d):=
 \end{itemize}
 Falls $G_1,G_2$ Abelsch, dann ist $G_1\times G_2$ auch
 Abelsch.
+%VL 12.11
+\begin{itemize}
+    \item $\Sigma_n=$ Gruppe der Permutationen von
+        $\{1,\hdots,n\}$
+    \item $*=$ Komposition von Abbildungen
+    \item $\sigma\in\Sigma_n:
+        \begin{pmatrix}
+            1&2&\hdots&n\\
+            \sigma(1)&\sigma(2)&\hdots&\sigma(n)
+        \end{pmatrix}$
+    \item Multiplikation durch umsortieren der Spalten:
+        $\sigma=
+        \begin{pmatrix}
+            1&2&3\\
+            2&3&1
+        \end{pmatrix}$
+    \item Andere notation für\\
+        $\begin{pmatrix}1&2&3\\2&1&3\end{pmatrix}:(12)(3)$\\
+        $\begin{pmatrix}1&2&3\\2&3&1\end{pmatrix}:(123)$
+    \item Es ist
+        $(i_1\hdots i_k)\circ(j_1\hdots j_m)=
+        (j_1\hdots j_m)\circ(i_1\hdots i_k)$
+\end{itemize}
+\begin{proposition}
+    Jede Permutation $\sigma$ ist eine Permutation von
+    diskunten Zyklen.
+\end{proposition}
+Beweis: Sei $\sigma\in\Sigma_n.i,j\in\{1,\hdots,n\}$ sind
+\textbf{$\sigma$-äquivalent} ($i\underset{\sigma}\sim j$)
+$\Leftrightarrow\underset{m\in\N}\exists\sigma^m(i)=j$.\\
+Dabei ist $\underset{\sigma}\sim$ Eine Äauivalenzrelation,
+$\langle\sigma\rangle$ ist eine endliche zyklische Gruppe\\
+mit $e,\sigma,\hdots,\sigma^k,\sigma^{k+1}=e
+\Rightarrow\sigma^k=\sigma^{-1}\Rightarrow j\underset{\sigma}
+\sim i$
+\begin{itemize}
+    \item reflexiv: $\sigma^0=e$
+    \item transitiv: $\sigma^{m_1}\circ\sigma^{m_1}=
+        \sigma^{m_1+m_2}$
+\end{itemize}
+$\Rightarrow\{1,\hdots,n\}$ ist eine disjunkte Vereinigung
+von Äquivalenzklassen.
+Jede Äquivalenzklasse liefert einen Zyklus.
+
+Das gibt die Anleitung um $\sigma$ als Produkt von
+disjunkten Zyklen zu schreiben: Wähle irgendein
+$i$ mit Zyklus $i,\sigma(i),\hdots,i$.
+Falls $\{1,\hdots,n\}\supsetneq\{i,\sigma(i),\hdots\}$
+wähle $j\notin\{i,\sigma(i),\hdots\}$, Zyklus
+$j,\sigma(j),\hdots$
+
+Für $H,G$ endlich mit $H<G$ ist $\ord(H)|\ord(G)$.
+Sei $H\overset{i}\to G$ Inklusion.
+Idee: $G$ als summe disjunkter Vereinigungen
+von Äquivalenzklsasen der Größe $\ord(H)$ mit
+$L(i(H))\cong H \Rightarrow\ord(H)=\ord(i(H))$
+
+Wir definieren Äquivalenzklassen auf $G$:
+Seien $g_1,g_2\in G$
+\begin{equation*}
+    g_1\underset{l}\sim g_2 \Leftrightarrow g^{-1}g_2\in H
+    \Leftrightarrow\underset{h\in H}\exists g_1^{-1}g_2=h
+    \Leftrightarrow\underset{h\in H}\exists g_2=g_1h
+    \Leftrightarrow\underset{h'\in H}\exists g_1=g_2h'
+\end{equation*}
+Mit einer Zweiten Äquivalenzrelation
+\begin{equation*}
+    g_1\underset{r}\sim g_2\Leftrightarrow g_1g_2^{-1}\in H
+    \Leftrightarrow\underset{h\in H}\exists g_1g_2^{-1}=h
+    \Leftrightarrow\underset{h\in H}\exists g_1=hg_2
+    \Leftrightarrow\underset{h'\in H}\exists g_2=h'g_1
+\end{equation*}
+Wir zeigen $\underset{l}\sim$ ist eine Äquivalenzrelation:
+\begin{itemize}
+    \item reflexiv $g_1\underset{l}\sim g_1\Leftrightarrow
+        g_1^{-1}g_1=e\in H$
+    \item symmetrisch sei $g_1\underset{l}\sim g_2
+        \Leftrightarrow g_1^{-1}g_2\in H
+        \Rightarrow (g_1^{-1}g_2)^{-1}=g_2^{-1}g_1\in H
+        \Rightarrow g_2\underset{l}\sim g_1$
+    \item transitiv sei $g_1\underset{l}\sim g_2$ und
+        $g_2\underset{l}\sim g_3$, dann ist
+        $(g_1^{-1}g_2)\cdot (g_2^{-1}g_3)=g_1^{-1}g_3\in H$
+\end{itemize}
+(Analog für $\underset{r}\sim$)\\
+In beiden Fällen ist $H$ selbst eine Äquivalenzklasse:
+$g\underset{l}\sim h\in H\Leftrightarrow g^{-1}h\in H
+\Rightarrow g^{-1}\in H$,
+sei $g\in H\Rightarrow g\underset{l}\sim g\in H\Rightarrow H$
+ist selbst eine Äquivalenzklasse
+
+Sei $g_1\in G$ fest, $g_1\in G:g_1\underset{l}\sim g_2
+\Leftrightarrow g_2=g_1h$ für ein $h\in H$, also
+in der Äquivalenzklasse von $g_1$ liegen genau die Elemente
+$g_1h(h\in H)$.
+
+\begin{defi}
+    Sei $G$ eine Gruppe, $H\subset G$ eine in $G$ enthaltene
+    Untergruppe und $g\in G$ die Menge $\{gh|h\in H\}$
+    ist die \textbf{Linksnebenklasse} von $g$ bezüglich $H$,
+    die Menge $\{hg|h\in H\}$ ist die
+    \textbf{Rechtsnebenklasse} von $g$ bezüglich $H$
+\end{defi}
 \end{document}
