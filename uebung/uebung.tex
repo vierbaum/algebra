@@ -1504,6 +1504,58 @@ Betrachten Sie die Gruppen $G = (\Z/6\Z,+)$ und $H = ((\Z/7\Z)^*,\cdot)$.
         für drei Untergruppen im Allgemeinen nicht gilt.
         \color{black}
 \end{enumerate}
+\subsection{}
+\color{blue}
+Auf $\R$ sei die Verknüpfung
+\[
+  x \ast y = x + y + x^2 y
+\]
+definiert.
+\color{black}
+\begin{enumerate}[(a)]
+    \item
+        \color{blue}
+        Zeigen Sie, dass es genau ein neutrales Element $e \in \R$ bezüglich
+        $\ast$ gibt.\\
+        \color{black}
+        $0$ ist neutrales ELement, es gilt $x*0=x+0+x^20=x=0+x+0^2x=0*x$.
+        Wir nehmen an, es gibt ein weiteres neutrales Element $0\neq e\in\R$,
+        dann ist $e=e*0=0\Rightarrow$ Es gibt nur ein Neutrales Element in $\R$ bezüglich $*$.
+    \item
+        \color{blue}
+        Zeigen Sie, dass es zu jedem $x \in \R$ genau ein Rechtsinverses gibt,
+        also genau ein $y \in \R$ mit $x \ast y = e$.\\
+        \color{black}
+        Wir zeigen zunächst, dass jedes Element ein Rechtsinverses hat.
+        Dafür sei $x\in R$ beliebig, wir wählen $y=-\frac{x}{x^2+1}(x^2+1>0\text{ in }\R)$
+        \begin{align*}
+            x*y
+            &=x-\frac{x}{x^2+1}+x^2(-\frac{x}{x^2+1})\\
+            &=x-\frac{x}{x^2+1}-\frac{x^3}{x^2+1}\\
+            &=x-\frac{x+x^3}{x^2+1}\\
+            &=x-\frac{x(1+x^2)}{x^2+1}\\
+            &=0
+        \end{align*}
+        $\Rightarrow y$ ist ein Rechtsinverses von $x$.\\
+        Wir nehmen an, es gibt ein $y'\neq y$ mit $x*y'=0$,
+        dann ist
+        \begin{align*}
+            x*y&=x*y'\\
+            x+y+x^2y&=x+y'+x^2y'\\
+            y+x^2y&=y'+x^2y'\\
+            y\underbrace{(1+x^2)}_{>0\text{ in }\R}&=y'(1+x^2)\\
+            y&=y'
+        \end{align*}
+        $\Rightarrow$ es gibt nur ein Rechtsinverses in $\R$
+    \item
+        \color{blue}
+        Bestimmen Sie $\left(-\tfrac{1}{2}\right) \ast 1$. Folgern Sie, dass
+        $(\R,\ast)$ keine Gruppe ist.\\
+        \color{black}
+        $\left(-\frac{1}{2}\right)*1=\frac{3}{4},1*\left(-\frac{1}{2}\right)=0$, Da $0$ das Neutrale Element ist
+        und $\left(-\frac{1}{2}\right)$ das Inverse von $1$ ist muss nach vorraussetzung an eine Gruppe
+        $\left(-\frac{1}{2}\right)*1=0$ gelten, dies ist hier aber nicht der Fall.
+\end{enumerate}
 \paragraph{27.10.26}
 \begin{enumerate}[1.]
     \item
