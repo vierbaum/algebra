@@ -1535,4 +1535,173 @@ $g_1h(h\in H)$.
     die Menge $\{hg|h\in H\}$ ist die
     \textbf{Rechtsnebenklasse} von $g$ bezüglich $H$
 \end{defi}
+\color{purple}
+$G=\Z,H=n\Z\cup(1+n\Z)\cup\hdots\cup(n-1+n\Z)$.
+$e\in gH\Leftrightarrow gH=eH=H$. Also ist $gH$ eine
+Untergruppe $\Leftrightarrow gH=H$. Die anderen
+nebenklassen sind keine Untergruppen.
+\color{black}
+\begin{lemma}
+    Sei $g\in G,H\subset G$ eine Untergruppe. Die Abbildung
+    $\varphi H\to gH; h\mapsto gh$ ist eine Bijektion mit
+    inverser Abbildung $\psi: gH\to H; gh\mapsto h$
+\end{lemma}
+Beweis:
+Sei $gh=gh'$ mit $h,h'$ liegen in derselben Nebenklasse,
+dann ist $\psi(gh)=h,\psi(gh')=h'$ aus $gh=gh'$
+folgt
+\begin{align*}
+    g^{-1}(gh)&=g^{-1}(gh')\\
+    (g^{-1}g)h&=(g^{-1}g)h'\\
+    h&=h'
+\end{align*}
+Also ist $\psi\circ\varphi=\id,\varphi\circ\psi=\id$
+\begin{korollar}[Satz von lagrange]
+    Sei $G$ eine Gruppe, $H\subset G$ eine Untergruppe
+    und $[G:H]\in\N_0\cup\{\infty\}$ die Anzahl der
+    Linksnebenklassen. Dann ist $\ord(G)=\ord(H)\cdot[G:H]$.
+    $[G:H]$ heißt \textbf{Index} von $H$ in $G$.
+    Insbesondere ist $\ord(H)|\ord(G)$
+\end{korollar}
+Beweis:
+Seien $g_i$ Räpresentatnten der Linksnebenklassen
+$G=\underset{i\in I}\bigcup g_iH$ disjunkte Vereinigung
+der Äquivalenzklassen=Linksnebenklassen. Es ist
+$|I|=[G:H]\overset{2.9}\Rightarrow|g_iH|=|g_jH|
+\Rightarrow|G|=[G:H]\cdot|H|$
+
+\color{blue}
+Frage: Sei $G|H=\{gH|g\in G\}$ die Menge aller
+Linksnebenklassen Hat das eine von $G$ induzierte
+Gruppenstruktur? Wollen $e_GH$ ist das Einselement
+von $G|H$.\\
+$g_1H*g_2H=(g_1*_Gg_2)H,(gH)^{-1}=g^{-1}H$
+Ist $g_1H*g_2H=(g_1g_2)*H$ eine Wohldefinierte
+Multiplikation?\\
+Negatives Beispiel: $G=\Sigma_3,H=\{\id,(12)\}$ Untegruppe,
+$\ord(G)=6,\ord(H)=2\Rightarrow[G:H]=\frac{6}{2}=3$.
+Drei Linksnebenklassen:
+\begin{itemize}
+    \item $\id H=H$.
+    \item $(23)H=\{(23)\id=(23), (23)(12)=(132)\}$
+    \item $(13)H=\{(13)\id=(13), (13)(12)=(123)\}$
+\end{itemize}
+Versuch einer Multiplikation:
+\begin{align*}
+    &(23)H*(13)H\\
+    &(23)(13)=(123)\\
+    &(23)H=(132)H\\
+    &(132)(13)=(12)\\
+    &(123)H\neq(12)H
+\end{align*}
+$\Rightarrow$ Multiplikation ist nicht wohldefiniert.
+
+Beobachtung: RNK$\neq$LNK:
+$H(13)=\{(13),(132)\}\neq (13)H$
+\color{black}
+\begin{defi}
+    Sei $G$ eine Gruppe und $H\subseteq G$ eine
+    Untergruppe von $G$. $H$ ist eine
+    \textbf{normale Untergruppe} (\textbf{Normalteiler}):
+    $\Leftrightarrow\underset{g\in G}\forall gH=Hg$,
+    d.h. für $g\in G$ stimmen die LNK $gH$ und die RNK $Hg$
+    überein.
+    Notation $H\triangleleft G$
+\end{defi}
+\color{purple}
+\begin{itemize}
+    \item $G:=\{e\}$
+    \item $G:=H$
+    \item $G$ abelsch: $gH=\{gh|h\in H\}=\{hg|h\in H\}=Hg$
+\end{itemize}
+\color{black}
+\begin{thm}
+    Sei $G$ eine Gruppe.
+    \begin{enumerate}[(a)]
+        \item Eine Untergruppe $H\subset G$ ist normal
+            $\Leftrightarrow \underset{g\in G}\forall
+            gH^{-1}g=H\Leftrightarrow\underset{g\in G,h\in H}
+            \forall gh^{-1}g\in H$
+        \item
+            Sei $N\triangleleft G$ und $G|N:=\{gN|g\in G\}$
+            Die Menge der Linksnebenklassen. Dann ist $G|N$
+            eine Gruppe mit Multiplikation $g_1N*g_2N=
+            (g_1*g_2)N$. $G/N$ heißt \textbf{Faktorgruppe}
+            oder \textbf{Quotientengruppe}.
+        \item Sei $\varphi:G\to G'$ ein
+            Gruppenhomomorphismus und $H:=\Kern(\varphi):=
+            \{g\in G|\varphi(g)=e_G\}$. Dann ist $H$ ein
+            Normalteiler. Außerdem ist $\varphi(G)$ eine
+            Untergruppe von $G'$ und $\varphi(G)\cong G|H$.
+            Wenn $\varphi$ surjektiv ist, gilt $G'\cong G|H$.
+    \end{enumerate}
+\end{thm}
+Beweis:
+\begin{enumerate}[(a)]
+    \item Erst eine Äquivalenz:
+        \begin{equation*}
+            \underset{g\in G}\forall
+            gH=Hg\overset{2.9}\Leftrightarrow gHg^{-1}=Hgg^{-1}
+            =He=H
+        \end{equation*}
+        Zweite Äquivalenz
+        \begin{equation*}
+            gHg^{-1}=H\Rightarrow ghg^{-1}\in H
+            \Rightarrow g^{-1}Hg\subset H,gHg^{-1}\subset H
+        \end{equation*}
+        Also ist $H=g^{-1}gHg^{-1}g\subset g^{-1}Hg$,
+        es folgt $gHg^{-1}=H$
+    \item
+        Seien $g_1N=g_1'N$ und $g_2N=g_2'N$ zz: $g_1g_2N=
+        g_1'g_2'N$\\
+        Nebenklassen sind Äquivalenzklassen, also gleich
+        oder disjunkt, wir zeigen:
+        $g_1g_2\in g_1'g_2'N$ also zz $\underset{n}\exists
+        g_1g_2=g_1'g_2'n$
+        \begin{align*}
+            &g_1\in g_1'N\Rightarrow\underset{n_1\in N}
+            \exists g_1=g_1'n\\
+            &g_2\in g_2'N\Rightarrow\underset{n_2\in N}
+            \exists g_2=g_2'n\\
+            &N\text{ normal}\Rightarrow g_2'N=Ng_2'
+            \Rightarrow\underset{n_3}\exists n_1g_2'=
+            g_2'n_3\\
+            &g_1g_2=g_1'n_2g_2'n_3=g_1'g_2'
+            \underbrace{n_3n_2}_{\in N}
+        \end{align*}
+        $\Rightarrow g_1g_2N=g_1'g_2'N\Rightarrow$ Die
+        Multiplikation auf $G/N$ ist wohldefiniert.
+    \item
+        $\varphi:G\to G'$ Gruppenhomomorphismus,
+        $H=\Kern(\varphi)$ Untergruppe:
+        \begin{align*}
+            &e_G\in H:\varphi(e_G)=e_G'\\
+            &g_1,g_2\in H:\varphi(g_1)=e_G'=
+            \varphi(g_2)\Rightarrow\varphi(g_1*g_2)=
+            \varphi(g_1)*\varphi(g_2)=e_G'*e_G'=e_G'\\
+            &g\in H:\varphi(g*g^{-1})=\varphi(g)*
+            \varphi(g^{-1})\Rightarrow\varphi(g^{-1})
+            =\varphi(g)^{-1}
+        \end{align*}
+        $\Rightarrow H$ Untergruppe
+\end{enumerate}
+\begin{korollar}
+    Sei $p\in\N$ eine Primzahl und $x\in\Z\setminus p\Z$.
+    Dann gilt $p|x^{p-1}-1\Rightarrow x^{p-1}\equiv 1\mod p$
+\end{korollar}
+Beweis:
+Idee: Wir realisieren $p-1$ als Ordnung einer endlichen
+Gruppe, $((\Z/p\Z)^*,\cdot)$ Behauptung: $\Z/p\Z$ ist
+ein Körper: $\Z/p\Z$ ist ein Ring, zz $g\in\Z/p\Z,
+g\neq\overline{0}\Rightarrow g$ invertiertbar.
+Sei $g=\overline{a}=a+p\Z,p$ prim $\Rightarrow\ggT(a,p)=1$
+Mit eukl. Algorithmus: $1=\lambda a+\mu p
+\Rightarrow\overline{1}=\overline{\lambda}\overline{a}+
+\overline{\mu}\overline{p}\Rightarrow\overline{1}=
+\overline{\lambda}\overline{a}\Rightarrow\overline{\lambda}
+=\overline{a}^{-1}\Rightarrow\Z/p\Z$ ist ein Körper
+$\Rightarrow(\Z/p\Z\setminus\{0\},\cdot)$ ist eine Gruppe
+$G,\ord(G)=p-1$ nach 2.10 ist $\langle\overline{x}\rangle<G
+\Rightarrow\ord(\overline{x})=\ord(\langle\overline{x}
+\rangle)\Rightarrow\overline{x}^{p-1}=1$
 \end{document}
